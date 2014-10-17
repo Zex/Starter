@@ -13,7 +13,7 @@ img {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
-	border: 0;
+    border: 0;
 /*    height: 200px; */
 }
 
@@ -40,7 +40,7 @@ input[type=text], input[type=submit], label, textarea, select {
 div, p {
     margin-left: 2%;
     margin-right: 2%;
-	line-height: 3em;
+    line-height: 3em;
 }
 
 textarea {
@@ -48,6 +48,10 @@ textarea {
     height: 50%;
 }
 
+textarea[readonly=true] {
+    resize: none
+}
+
 span {
-	color: #0dd00d
+    color: #0dd00d
 }
