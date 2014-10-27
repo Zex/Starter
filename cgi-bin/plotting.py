@@ -270,7 +270,7 @@ def reply():
     print "<body>"
     
 #    random_plot(1, 317, titlestr = 'Molecular Random Motion xxx')
-    essay_char(open('res/Licence', 'ro').read())
+    essay_char(open('../res/Licence.Sample', 'ro').read())
     print "<table>"
     print "<tr>"
     print "<td>"
