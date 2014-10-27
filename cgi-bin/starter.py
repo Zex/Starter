@@ -8,133 +8,154 @@ def starter():
 
     import time
     
-    print "Content-Type: text/html\n\n"
-    print "<!DOCTYPE html>"
-    print "<html>"
+    ret = "Content-Type: text/html\n\n"
+    ret += "<!DOCTYPE html>"
+    ret += "<html>"
     
-    print "<head>"
-    print "<title>Starter</title>"
-    print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-    print "<meta charset=\"UTF-8\">"
-    print "</head>"
+    ret += "<head>"
+    ret += "<title>Starter</title>"
+    ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
+    ret += "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">"
+    ret += "<meta charset=\"UTF-8\">"
+    ret += "</head>"
     
-    print "<body>"
-    print "<div>"
-    print "<img src=\"/img/cattail.jpg\" height=200px>"
-    print "</div>"
+    ret += "<body>"
+    ret += "<div class=\"navigator\">"
+    ret += "<a name=\"Navigator\"><ul>Navigator</ul></a>"
+    ret += "<ul>"
+    ret += "<li><a href=\"#Motions\" title=\"Motions\">Motions</a></li>"
+    ret += "<li><a href=\"#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>"
+    ret += "<li><a href=\"#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>"
+    ret += "</ul>"
+    ret += "</div>"
+
+    ret += "<div id=\"content\">"
+    ret += "<div class=\"normal\">"
+    ret += "<img src=\"/img/cattail.jpg\" height=200px>"
+    ret += "</div>"
+
+    ret += "<div class=\"normal\">"
+    ret += "<a href=\"#Navigator\" title=\"Navigator\">Navigator</a>"
+    ret += "<form action=\"hello_baby.py\" method=get>"
+    ret += "<label><b>Action: </b></label>"
+    ret += "<input type=\"text\" name=\"fr_name\"/>"
+    ret += "<input type=\"submit\" value=\"Do IT!\"/><br>"
+    ret += "</form>"
+    ret += "</div>"
     
-    print "<div>"
-    print "<form action=\"hello_baby.py\" method=get>"
-    print "<label><b>Action: </b></label>"
-    print "<input type=text name=fr_name/>"
-    print "<input type=\"submit\" value=\"Do IT!\"/><br>"
-    print "</form>"
-    print "</div>"
+    ret += "<div class=\"normal\">"
+    ret += "<a href=\"#Navigator\" title=\"Navigator\">Navigator</a>"
+    ret += "<form action=\"upload_file.py\" method=post enctype=\"multipart/form-data\">"
+    ret += "<label><b>Select file: </b></label>"
+    ret += "<input type=\"file\" name=\"file_name\"/>"
+    ret += "<input type=\"submit\" value=\"Upload!\"/><br>"
+    ret += "</form>"
+    ret += "</div>"
     
-    print "<div>"
-    print "<form action=\"upload_file.py\" method=post enctype=\"multipart/form-data\">"
-    print "<label><b>Select file: </b></label>"
-    print "<input type=file name=file_name/>"
-    print "<input type=\"submit\" value=\"Upload!\"/><br>"
-    print "</form>"
-    print "</div>"
+    ret += "<table class=\"normal\">"
     
-    print "<table>"
-    
-    print "<tr>"
-    print "<td>"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">"
     icecreams = [ "Milk", "Chocolate", "Strawberry", "Coconut", "Peanut" ]
     
-    print "<form action=\"icecream_box.py\" method=post>"
-    print "<label><b>Icecream: </b></label><br>"
+    ret += "<form action=\"icecream_box.py\" method=post>"
+    ret += "<label><b>Icecream: </b></label><br>"
     
     for i in icecreams:
-        print "<input type=checkbox name=\"", i,"\" value=\"1\"/> <b>", i, "</b><br>"
+        ret += "<input type=checkbox name=\"" + str(i) + "\" value=\"1\"/> <b>" + str(i) + "</b><br>"
     
-    print "<input type=\"submit\" value=\"Done!\"/><br>"
-    print "</form>"
-    print "</td>"
-    print "<td>"
+    ret += "<input type=\"submit\" value=\"Done!\"/><br>"
+    ret += "</form>"
+    ret += "</td>"
+    ret += "<td class=\"normal\">"
     
     flowers = [ "Almond Blossom", "Balsam", "Anther", "Camellia", "Azalea" ]
     
-    print "<form action=\"flower_man.py\" method=post>"
-    print "<label><b>Flower: </b></label><br>"
+    ret += "<form action=\"flower_man.py\" method=post>"
+    ret += "<label><b>Flower: </b></label><br>"
     
     for f in flowers:
-        print "<input type=radio name=flower value=\"", f,"\"/> <b>", f,"</b><br>"
+        ret += "<input type=\"radio\" name=\"flower\" value=\"" + str(f) + "\"/> <b>" + str(f) + "</b><br>"
     
-    print "<input type=\"submit\" value=\"Done!\"/><br>"
-    print "</form>"
-    print "</td>"
-    print "</tr>"
-    print "</table>"
+    ret += "<input type=\"submit\" value=\"Done!\"/><br>"
+    ret += "</form>"
+    ret += "</td>"
+    ret += "</tr>"
+    ret += "</table>"
     
     options = [ "Go", "Walk Away", "Close", "Laught" ]
-    print "<div>"
-    print "<form action=\"motion_trigger.py\" method=post>"
-    print "<label for=option><b>Motions: </b></label><br>"
-    print "<select name=option>"
+    ret += "<div class=\"normal\">"
+    ret += "<a href=\"#Navigator\" title=\"Navigator\">Navigator</a>"
+    ret += "<form action=\"motion_trigger.py\" method=post>"
+    ret += "<label for=option><a name=\"Motions\"><b>Motions</b></a>:</label><br>"
+    ret += "<select name=option>"
     
     for o in options:
-        print "<option>" + o
+        ret += "<option>" + o
     
-    print "</select>"
-    print "<input type=\"submit\" value=\"Done!\"/><br>"
-    print "</form>"
-    print "</div>"
+    ret += "</select>"
+    ret += "<input type=\"submit\" value=\"Done!\"/><br>"
+    ret += "</form>"
+    ret += "</div>"
     
-    print "<div>"
-    print "<label><b>Current time: </b><label>"
-    print "<input id=\"cur_time\" type=text rows=30 cols=100 readonly=\"true\" value=\"",time.strftime(time.asctime()), "\"/><br>"
-    print "</form>"
-    print "</div>"
+    ret += "<div class=\"normal\">"
+    ret += "<label><b>Current time: </b><label>"
+    ret += "<input id=\"cur_time\" type=\"text\" readonly=\"true\" value=\"" + time.strftime(time.asctime()) + "\"/><br>"
+    ret += "</form>"
+    ret += "</div>"
     
-    print "<div>"
-    print "<form action=\"leave_message.py\" method=post>"
-    print "<label for=msgbox><b>Leave a Message: </b></label><br>"
-    print "<textarea name=\"msgbox\"></textarea><br>"
-    print "<input type=\"submit\" value=\"Submit\"/><br>"
-    print "</form>"
-    print "</div>"
-    
-    print "<table>"
-    print "<tr>"
-    print "<td>"
-    print "<form action=\"user_info.py\" method=get>"
-    print "<input type=\"submit\" value=\"User Info\"/><br>"
-    print "</form>"
-    print "</td>"
-    
-    print "<td>"
-    print "<form action=\"ranseq.py\" method=get>"
-    print "<input type=\"submit\" value=\"Random Seq\"/><br>"
-    print "</form>"
-    print "</td>"
-    
-    print "<td>"
-    print "<form action=\"roman_number.py\" method=get>"
-    print "<span>Arabic/Roman Number </span><input name=\"rnum\" type=\"text\"/><br>"
-    print "</form>"
-    print "</td>"
-    
-    print "<td>"
-    print "<form action=\"plotting.py\" method=post>"
-    print "<input type=\"submit\" value=\"Plot\"/><br>"
-    print "</form>"
-    print "</td>"
-    
-    #for i in xrange(1):
-    print "<td>"
-    print "<form action=\"hello_baby.py\" method=get>"
-    print "<input type=\"submit\" value=\"TOBE CONTINUE...\"/><br>"
-    print "</form>"
-    print "</td>"
-    
-    print "</tr>"
-    print "</table>"
-    
-    print "</body>"
-    print "</html>"
+    ret += "<div class=\"normal\">"
+    ret += "<a href=\"#Navigator\" title=\"Navigator\">Navigator</a>"
+    ret += "<form action=\"leave_message.py\" method=post>"
+    ret += "<a name=\"LeaveMessage\"><label for=msgbox><b>Leave a Message: </b></label></a><br>"
+    ret += "<textarea id=\"msgbox\" name=\"msgbox\"></textarea><br>"
+    ret += "<input type=\"submit\" value=\"Submit\"/><br>"
+    ret += "</form>"
+    ret += "</div>"
+   
+    ret += "<div class=\"normal\"><a href=\"#Navigator\" title=\"Navigator\">Navigator</a></div>"
 
-starter()
+    ret += "<table class=\"normal\">"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">"
+    ret += "<form action=\"user_info.py\" method=get>"
+    ret += "<input type=\"submit\" value=\"User Info\"/><br>"
+    ret += "</form>"
+    ret += "</td>"
+    
+    ret += "<td class=\"normal\">"
+    ret += "<form action=\"ranseq.py\" method=get>"
+    ret += "<a name=\"RandomSeq\"><input type=\"submit\" value=\"Random Seq\"/></a><br>"
+    ret += "</form>"
+    ret += "</td>"
+    
+    ret += "<td class=\"normal\">"
+    ret += "<form action=\"roman_number.py\" method=get>"
+    ret += "<span>Arabic/Roman Number </span><input name=\"rnum\" type=\"text\"/><br>"
+    ret += "</form>"
+    ret += "</td>"
+    
+    ret += "<td class=\"normal\">"
+    ret += "<form action=\"plotting.py\" method=post>"
+    ret += "<input type=\"submit\" value=\"Plot\"/><br>"
+    ret += "</form>"
+    ret += "</td>"
+    
+    ret += "<td class=\"normal\">"
+    ret += "<form action=\"<?php echo hello;?>\" method=post>"
+    ret += "<input type=\"submit\" value=\"Dial proxy\"/><br>"
+    ret += "</form>"
+    ret += "</td>"
+    
+    ret += "</tr>"
+    ret += "</table>"
+    
+    ret += "</div>"
+
+    ret += "</body>"
+    ret += "</html>"
+
+    print ret
+
+if __name__ == '__main__':
+    starter()
