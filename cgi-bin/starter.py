@@ -142,8 +142,8 @@ def starter():
     ret += "</td>"
     
     ret += "<td class=\"normal\">"
-    ret += "<form action=\"<?php echo hello;?>\" method=post>"
-    ret += "<input type=\"submit\" value=\"Dial proxy\"/><br>"
+    ret += "<form action=\"whereyoulive.py\" method=\"get\">"
+    ret += "<input type=\"submit\" value=\"Where You Live\"/><br>"
     ret += "</form>"
     ret += "</td>"
     
