@@ -2,11 +2,35 @@ body {
     font-weight: bold;
     color: #920481;
     background-color: #090d0d;
-    margin-left: 10%;
-    margin-right: 20%;
+}
+
+div.default_page {
+    text-align: center; 
+    width: auto; /* 1022px; /* image width */
+    height: auto; /* 664px; image height */
+    font-size: 20pt;
+}
+
+/*#navigator {*/
+div.navigator {
+    width: 15%;
+    float: left;
+/*  outline: 5px outset #1377d3;
+    border: 5px inset #1315dd;
+*/
+}
+
+#content {
+    margin-left: 19%;
     width: 80%;
     outline: 5px outset #1377d3;
     border: 5px inset #1315dd;
+}
+
+ul, li {
+    font-weight: bold;
+    color: #920481;
+    background-color: #090d0d;
 }
 
 img {
@@ -17,13 +41,19 @@ img {
 /*    height: 200px; */
 }
 
-th, tr, td {
+th.normal, tr.normal, td.normal {
     background-color: #152079;
     color: #837192;
     border: 3px solid #157401;
 }
 
-table {
+tr[align=center] {
+    color: #ff0000;
+    background-color: #eeeeee;
+    border: 20px solid #157401;
+}
+
+table.normal {
     background-color: #152079;
     color: #837192;
     border: 3px solid #157401;
@@ -37,7 +67,16 @@ input[type=text], input[type=submit], label, textarea, select {
     margin-right: 0;
 }
 
-div, p {
+
+a:visited {
+    color:#d53030;
+}
+
+a:link {
+    color:#a5a0a0;
+}
+
+div.normal, p {
     margin-left: 2%;
     margin-right: 2%;
     line-height: 3em;
@@ -53,5 +92,14 @@ textarea[readonly=true] {
 }
 
 span {
-    color: #0dd00d
+    color: #0dd00d;
+}
+
+pre {
+    font-size: 20px;
+    color: #a22281;
+    background-color: #dddddd;
+    white-space: pre;
+    width: 80%;
+    display: block;
 }
