@@ -13,6 +13,14 @@
 		allow from all
 	</Directory>
 
+    alias /css/ /home/ag/lab/Starter/css/
+	<Directory /home/ag/lab/Starter/css>
+		Options FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
 	ScriptAlias /cgi-bin/ /home/ag/lab/Starter/cgi-bin/
 	<Directory "/home/ag/lab/Starter/cgi-bin">
 		AllowOverride None
