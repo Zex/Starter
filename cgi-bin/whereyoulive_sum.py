@@ -95,12 +95,15 @@ def reply(kwargs):
     ret += "</div>"
 
     ret += "<div id=\"content\">"
-
+    print 'here 1'
     if kwargs.has_key('addr'):
+        print 'here 1'
         whereyoulive(kwargs['addr'])
     elif kwargs.has_key('elseaddr'):
+        print 'here 1'
         whereyoulive(kwargs['elseaddr'])
     else:
+        print 'here 1'
         ret += "<span>No address selected. <span>Previous Result</span><br>"
 
     ret += whereyoulive_sum()

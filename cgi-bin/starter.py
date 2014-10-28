@@ -142,7 +142,7 @@ def starter():
     ret += "</td>"
     
     ret += "<td class=\"normal\">"
-    ret += "<form action=\"whereyoulive.py\" method=\"get\">"
+    ret += "<form action=\"whereyoulive.py\" method=\"post\">"
     ret += "<input type=\"submit\" value=\"Where You Live\"/><br>"
     ret += "</form>"
     ret += "</td>"

@@ -40,7 +40,7 @@ def survey():
     ret += "<h2>Welcome, " + os["REMOTE_ADDR"] + "!</h2>"
     ret += "<span>" + os["HTTP_USER_AGENT"] + "</span><br><br>"
   
-    ret += "<form action=\"whereyoulive\" method=\"post\">" 
+    ret += "<form action=\"whereyoulive.py\" method=\"post\">" 
 
     for a in whereyoulive_sum.preset().items():
         ret += "<input type=\"radio\" name=\"addr\" value=\"" + str(a[0]) + "\"/> <b>" + str(a[0]) + "</b><br>"
@@ -53,7 +53,7 @@ def survey():
     ret += "</body>"
     ret += "</html>"
 
-    print ret
+    return ret
 
 def reply():
 
@@ -73,11 +73,13 @@ def reply():
 #    return
 
     if kwargs.has_key('addr') or kwargs.has_key('elseaddr'):
-        whereyoulive_sum.reply(kwargs)
+        print whereyoulive_sum.reply(kwargs)
     else:
-        survey()
+        print survey()
 
 try:
     reply()
 except Exception as e:
     print e
+
+
