@@ -201,7 +201,8 @@ if (empty($_FILES)) {
     echo "<span>".getenv("HTTP_USER_AGENT")."</span><br><br>";
 
     echo "<div>Source package: ".$_FILES["srcpkg"]["name"]."</div>";
-    echo "<div>SrcView: "."<a href=".$respath."/".$outfile.".pdf".">"."<span>".$outfile.".pdf"."</span>"."</a>"." generated!</div>";
+    echo "<div>SrcView: "."<a href=".$respath."/".$outfile.".pdf".">".
+        "<span>".$outfile.".pdf"."</span>"."</a>"." generated!</div>";
     echo "<div>Total page: ".($page_nr+1)."</div>";
     echo "<br><br><div>".$now."</div>";
 
