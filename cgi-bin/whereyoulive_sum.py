@@ -13,9 +13,10 @@ from socket import gethostname, gethostbyname
 # addr -> count
 
 addr_prefix = 'staff.address.'
+sample = "../res/Addrs.Sample"
 
-if not globals().has_key('addresses'):
-    addresses = []
+with open(sample, 'r') as fd:
+   addresses = [ p.replace('\n', '') for p in fd.readlines() ]
 
 def preset(sample):
 
@@ -23,9 +24,6 @@ def preset(sample):
     conn = Client([gethostname()+':11211'])
 
     if conn.get_stats()[0][1]['curr_items'] == 0:
-#    if 1: # load address info from sample addresses
-        with open(sample, 'r') as fd:
-            addresses = [ p.replace('\n', '') for p in fd.readlines() ]
 
         for k in addresses:
             conn.set(addr_prefix+k, 0)
@@ -38,7 +36,10 @@ def whereyoulive(addr):
         conn.incr(addr_prefix+addr)
 
     else:
-        conn.set(addr, 1)
+        conn.set(addr_prefix+addr, 1)
+
+    if not addresses.__contains__(addr):
+        addresses.append(addr)
         
 def whereyoulive_sum():
 
@@ -55,7 +56,13 @@ def whereyoulive_sum():
     for k in addresses:
         ret += "<tr class=\"normal\">"
         ret += "<td class=\"normal\">" + k + "</td>"
-        vals.append(conn.get(addr_prefix+k))
+        val = conn.get(addr_prefix+k)
+
+        if val == None:
+            vals.append(0)
+        else:
+            vals.append(val)
+
         ret += "<td class=\"normal\"><span>" + str(vals[-1]) + "</span></td>"
         ret += "</tr>"
 
@@ -111,4 +118,4 @@ def reply(kwargs):
 
     return ret
 
-preset("../res/Addrs.Sample")
+preset(sample)
