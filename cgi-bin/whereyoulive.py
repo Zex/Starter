@@ -35,15 +35,15 @@ def survey():
     ret += "</ul>"
     ret += "</div>"
 
-    ret += "<div id=\"content\">"
+    ret += "<div class=\"content\">"
 
-    ret += "<h2>Welcome, " + os["REMOTE_ADDR"] + "!</h2>"
-    ret += "<span>" + os["HTTP_USER_AGENT"] + "</span><br><br>"
+    ret += "<h2>Welcome, " + os.environ["REMOTE_ADDR"] + "!</h2>"
+    ret += "<span>" + os.environ["HTTP_USER_AGENT"] + "</span><br><br>"
   
     ret += "<form action=\"whereyoulive.py\" method=\"post\">" 
 
-    for a in whereyoulive_sum.preset().items():
-        ret += "<input type=\"radio\" name=\"addr\" value=\"" + str(a[0]) + "\"/> <b>" + str(a[0]) + "</b><br>"
+    for a in whereyoulive_sum.addresses:#preset("../res/Addrs.Sample"):
+        ret += "<input type=\"radio\" name=\"addr\" value=\"" + str(a) + "\"/> <b>" + str(a) + "</b><br>"
 
     ret += "<label for=\"elseaddr\">" + "Somewhere Else ..." + "</label><br>"
     ret += "<input type=\"text\" name=\"elseaddr\"/><br>"
@@ -61,25 +61,12 @@ def reply():
 
     kwargs = FieldStorage()
 
-#    from cgi import os
-#    print "Content-Type: text/html\n\n"
-#    print "<!DOCTYPE html>"
-#    print "<html>"
-#    print dir (fields), '<br><br>'
-#    for k, v in os.environ.items():
-#        print k, ':', v, '<br>'
-#
-#    print "</html>"
-#    return
-
     if kwargs.has_key('addr') or kwargs.has_key('elseaddr'):
-        print whereyoulive_sum.reply(kwargs)
+        return whereyoulive_sum.reply(kwargs)
     else:
-        print survey()
+        return survey()
 
-try:
-    reply()
-except Exception as e:
-    print e
+if __name__ == '__main__':
+    print reply()
 
 

@@ -17,9 +17,8 @@ def starter():
     ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
     ret += "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">"
     ret += "<meta charset=\"UTF-8\">"
-    ret += "</head>"
-    
-    ret += "<body>"
+    ret += "</head><body>"
+
     ret += "<div class=\"navigator\">"
     ret += "<a name=\"Navigator\"><ul>Navigator</ul></a>"
     ret += "<ul>"

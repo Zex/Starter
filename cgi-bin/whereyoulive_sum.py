@@ -14,26 +14,21 @@ from socket import gethostname, gethostbyname
 
 addr_prefix = 'staff.address.'
 
+if not globals().has_key('addresses'):
+    addresses = []
+
 def preset(sample):
 
-    ret = {}
+    global addresses
     conn = Client([gethostname()+':11211'])
 
-#    if conn.get_stats()[0][1]['curr_items'] == 0:
-    if 1: # load address info from sample addresses
+    if conn.get_stats()[0][1]['curr_items'] == 0:
+#    if 1: # load address info from sample addresses
         with open(sample, 'r') as fd:
-            addresses = { p.split('\n')[0]:0 for p in fd.readlines() }
+            addresses = [ p.replace('\n', '') for p in fd.readlines() ]
 
-        for k, v in addresses.items():
-            print "++++++++++", k, v
-            conn.set(addr_prefix+k, v)
-            ret[k] = v
-
-#    else:
-#        for k, v in conn.get_multi(keys, key_prefix=addr_prefix).items():
-#            ret[k] = v
-
-    return ret
+        for k in addresses:
+            conn.set(addr_prefix+k, 0)
 
 def whereyoulive(addr):
 
@@ -47,25 +42,30 @@ def whereyoulive(addr):
         
 def whereyoulive_sum():
 
+    global addresses
+    
     ret = "<table class=\"normal\">"
     ret += "<th class=\"normal\">" + "Address" + "</th>"
     ret += "<th class=\"normal\">" + "Total/Address" + "</th>"
 
     conn = Client([gethostname()+':11211'])
-#    vals = []
-#
-#    for x in conn.zrange(addr_prefix, 0, conn.zcard(addr_prefix)):
-#        ret += "<tr class=\"normal\">"
-#        ret += "<td class=\"normal\">" + x + "</td>"
-#        vals.append(int(conn.zscore(addr_prefix, x)))
-#        ret += "<td class=\"normal\"><span>" + str(vals[-1]) + "</span></td>"
-#        ret += "</tr>"
-#
-#    ret += "<tr align=\"center\"><td class=\"normal\">" + "Sum" + "</td>"
-#    if len(vals) == 0:
-#        ret += "<td class=\"normal\">" + "0" + "</td></tr>"
-#    else:
-#        ret += "<td class=\"normal\">" + str(reduce(lambda i, j : i+j, [i for i in vals])) + "</td></tr>"
+
+    vals = []
+    
+    for k in addresses:
+        ret += "<tr class=\"normal\">"
+        ret += "<td class=\"normal\">" + k + "</td>"
+        vals.append(conn.get(addr_prefix+k))
+        ret += "<td class=\"normal\"><span>" + str(vals[-1]) + "</span></td>"
+        ret += "</tr>"
+
+    ret += "<tr align=\"center\"><td class=\"normal\">" + "Sum" + "</td>"
+
+    if len(vals) == 0:
+        ret += "<td class=\"normal\">" + "0" + "</td></tr>"
+    else:
+        ret += "<td class=\"normal\">" + str(reduce(lambda i, j : i+j, [i for i in vals])) + "</td></tr>"
+
     ret += "</table>"
 
     return ret
@@ -94,16 +94,13 @@ def reply(kwargs):
     ret += "</ul>"
     ret += "</div>"
 
-    ret += "<div id=\"content\">"
-    print 'here 1'
+    ret += "<div class=\"content\">"
+
     if kwargs.has_key('addr'):
-        print 'here 1'
-        whereyoulive(kwargs['addr'])
+        whereyoulive(kwargs['addr'].value)
     elif kwargs.has_key('elseaddr'):
-        print 'here 1'
-        whereyoulive(kwargs['elseaddr'])
+        whereyoulive(kwargs['elseaddr'].value)
     else:
-        print 'here 1'
         ret += "<span>No address selected. <span>Previous Result</span><br>"
 
     ret += whereyoulive_sum()
@@ -112,6 +109,6 @@ def reply(kwargs):
     ret += "</body>"
     ret += "</html>"
 
-    print ret
+    return ret
 
-#preset("../res/Addrs.Sample")
+preset("../res/Addrs.Sample")
