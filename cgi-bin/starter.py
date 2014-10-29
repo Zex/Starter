@@ -29,7 +29,7 @@ def starter():
     ret += "</ul>"
     ret += "</div>"
 
-    ret += "<div id=\"content\">"
+    ret += "<div class=\"content\">"
     ret += "<div class=\"normal\">"
     ret += "<img src=\"/img/cattail.jpg\" height=200px>"
     ret += "</div>"
