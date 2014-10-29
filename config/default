@@ -21,6 +21,22 @@
 		allow from all
 	</Directory>
 
+    alias /tmp/ /tmp/
+	<Directory /tmp>
+		Options FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+    alias /res/ /home/ag/lab/Starter/res/
+	<Directory /home/ag/lab/Starter/res>
+		Options FollowSymLinks MultiViews
+		AllowOverride FileInfo
+		Order allow,deny
+		allow from all
+	</Directory>
+
 	ScriptAlias /cgi-bin/ /home/ag/lab/Starter/cgi-bin/
 	<Directory "/home/ag/lab/Starter/cgi-bin">
 		AllowOverride None
@@ -31,6 +47,8 @@
 
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 
+    ErrorDocument 401 /default/Starter401.html
+    ErrorDocument 403 /default/Starter403.html
     ErrorDocument 404 /default/Starter404.html
     ErrorDocument 500 /default/Starter500.html
 
