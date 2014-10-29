@@ -7,6 +7,7 @@
 require_once 'Zend/Loader/Autoloader.php';
 $loader = Zend_Loader_Autoloader::getInstance();
 $date_fmt =  "D M Y H:m:s";
+date_default_timezone_set('UTC');
 $now = date($date_fmt);
 
 function get_all_groups($curdir, $groups)
