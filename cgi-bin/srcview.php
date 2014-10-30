@@ -136,7 +136,6 @@ if (empty($_FILES)) {
         }
     }
 
-    $page_nr = 0;
 
     /* generate each file */
     foreach ($srcs as $filename) {
@@ -147,12 +146,11 @@ if (empty($_FILES)) {
         $page->setFont($font, $font_sz);
         $limit_width = $page->getWidth()-$indent*2;
         $line_nr = $page_space;
-        $page_nr ++;
         $pg_head = $now."  ".$outfile."-".str_replace($tmp_remote_dir, "", $filename);
     
         /* generate project name */
         $page->drawText($pg_head, ($limit_width-strlen($pg_head))/4, $page->getHeight()-20);
-        $page->drawText($page_nr, $limit_width, $page->getHeight()-20);
+        $page->drawText(sizeof($pdf->pages)+1, $limit_width, $page->getHeight()-20);
         $line_nr += ($font_sz + $line_space)*2;
 
 //        /* generate file name */
@@ -172,28 +170,28 @@ if (empty($_FILES)) {
                 $line_nr += $font_sz + $line_space;
                 $ind += $limit_width;
 
-                if ($page_nr_max > 0 && $page_nr_max < $page_nr)
+                if ($page_nr_max > 0 && $page_nr_max < sizeof($pdf->pages)+1)
                     break;
 
                 if ($line_nr > $page->getHeight()-$page_space) {
     
-                    $pdf->pages[$page_nr] = $page;
+                    //$pdf->pages[$page_nr] = $page;
+                    array_push($pdf->pages, $page);
     
                     $page = new Zend_Pdf_Page(Zend_Pdf_Page::SIZE_A4);
                     $page->setFont($font, $font_sz);
                     $line_nr = $page_space;
-                    $page_nr ++;
                 
                     /* generate project name */
                     $page->drawText($pg_head, ($limit_width-strlen($pg_head))/4, $page->getHeight()-20);
-                    $page->drawText($page_nr, $limit_width, $page->getHeight()-20);
+                    $page->drawText(sizeof($pdf->pages)+1, $limit_width, $page->getHeight()-20);
                     $line_nr += ($font_sz + $line_space)*2;
                 }
             }
         
         }
     
-        if ($page_nr_max > 0 && $page_nr_max <= $page_nr)
+        if ($page_nr_max > 0 && $page_nr_max < sizeof($pdf->pages)+1)
             break;
 
         if ($line_nr > $page_space)
