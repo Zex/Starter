@@ -63,9 +63,9 @@ function reply_default() {
     echo "<div class=\"navigator\">";
     echo "<a name=\"Navigator\"><ul>Navigator</ul></a>";
     echo "<ul>";
-    echo "<li><a href=\"index#Motions\" title=\"Motions\">Motions</a></li>";
-    echo "<li><a href=\"index#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>";
-    echo "<li><a href=\"index#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>";
+    echo "<li><a href=\"starter.py#Motions\" title=\"Motions\">Motions</a></li>";
+    echo "<li><a href=\"starter.py#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>";
+    echo "<li><a href=\"starter.py#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>";
     echo "</ul>";
     echo "</div>";
 
@@ -211,9 +211,9 @@ if (empty($_FILES)) {
     echo "<div class=\"navigator\">";
     echo "<a name=\"Navigator\"><ul>Navigator</ul></a>";
     echo "<ul>";
-    echo "<li><a href=\"index#Motions\" title=\"Motions\">Motions</a></li>";
-    echo "<li><a href=\"index#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>";
-    echo "<li><a href=\"index#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>";
+    echo "<li><a href=\"starter.py#Motions\" title=\"Motions\">Motions</a></li>";
+    echo "<li><a href=\"starter.py#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>";
+    echo "<li><a href=\"starter.py#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>";
     echo "</ul>";
     echo "</div>";
 
