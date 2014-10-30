@@ -167,7 +167,6 @@ if (empty($_FILES)) {
             /* generate each line */
             while ($ind < strlen($line)) {
 
-                $line = iconv("ISO-8859-1", "UTF-8//TRANSLIT", $line);
                 $page->drawText(substr($line, $ind, $limit_width), $indent, $page->getHeight()-$line_nr);
 
                 $line_nr += $font_sz + $line_space;
@@ -228,7 +227,7 @@ if (empty($_FILES)) {
     echo "<div>Source package: ".$_FILES["srcpkg"]["name"]."</div>";
     echo "<div>SrcView: "."<a href=".$respath."/".$outfile.".pdf".">".
         "<span>".$outfile.".pdf"."</span>"."</a>"." generated!</div>";
-    echo "<div>Total page: ".($page_nr+1)."</div>";
+    echo "<div>Total page: ".sizeof($pdf->pages)."</div>";
     echo "<br><br><div>".$now."</div>";
 
     echo "</div>";
