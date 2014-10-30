@@ -6,7 +6,7 @@
 
 require_once 'Zend/Loader/Autoloader.php';
 $loader = Zend_Loader_Autoloader::getInstance();
-$date_fmt =  "D M Y H:m:s";
+$date_fmt =  "j M Y H:m:s";
 date_default_timezone_set('UTC');
 $now = date($date_fmt);
 
@@ -29,19 +29,28 @@ function get_all_groups($curdir, $groups)
 }
 
 function clean_path_all($path) {
-    foreach(glob($path."/*") as $x) {
-        if (is_dir($x)) {
-            clean_path_all($x);
-//            rmdir($x);
+
+    $dirpath = dir($path);
+
+    while (false !== ($entry = $dirpath->read())) {
+
+        if (ereg("^\.{1,2}$", $entry))
+            continue;
+
+        $rm_entry = $path."/".$entry;
+
+        if (is_dir($rm_entry)) {
+            clean_path_all($rm_entry);
         }
-        else
-            unlink($x);
+        else {
+            unlink($rm_entry);
+        }
     }
 
     rmdir($path);
 }
 
-if (empty($_FILES)) {
+function reply_default() {
 
     header("Content-type: text/html; charset=utf-8");
 
@@ -72,19 +81,26 @@ if (empty($_FILES)) {
     echo "<input type=\"file\" name=\"srcpkg\"/><br>";
     echo "<label>Project name: </label><input type=\"text\" name=\"proj\"/><br>";
     echo "<label>Project version: </label><input type=\"text\" name=\"proj_ver\"/><br>";
+    echo "<label>Page limit(default: no limitation): </label><input type=\"text\" name=\"page_nr_max\"/><br>";
     echo "<input type=\"submit\" value=\"Upload!\"/><br>";
     echo "</form>";
     echo "</div>";
 
+    global $now;
     echo "<br><br><div>".$now."</div>";
 
     echo "</div>";
     echo "</body>";
     echo "</html>";
+}
+
+if (empty($_FILES)) {
+
+    reply_default();
 
 } else { try {
 
-    $tmp_remote_dir = "/tmp/".getenv("REMOTE_ADDR").str_replace(" ", "-", $now);
+    $tmp_remote_dir = "/tmp/".getenv("REMOTE_ADDR").'-'.str_replace(" ", "-", $now);
     $pkg_path = "/tmp/".$_FILES["srcpkg"]["name"];
 
     mkdir($tmp_remote_dir);
@@ -101,6 +117,7 @@ if (empty($_FILES)) {
     $respath = "/tmp";
     $proj = $_POST["proj"];//"EasySipTs";
     $projver = $_POST["proj_ver"];// "v123.44.567";
+    $page_nr_max = intval($_POST["page_nr_max"]);
 
     if (0 == strlen($proj))
         $proj = preg_split("/[\s\.]+/", basename($pkg_path))[0];
@@ -113,9 +130,8 @@ if (empty($_FILES)) {
     $groups = get_all_groups($dirpath, []);
     $srcs = [];
 
-
     foreach ($groups as $f) {
-        if (ereg(".*\.[cpp|c|h]", $f)) {
+        if (ereg(".*\.[cpp|c|h|hpp|cxx]", $f)) {
             array_push($srcs, $f);
         }
     }
@@ -132,7 +148,7 @@ if (empty($_FILES)) {
         $limit_width = $page->getWidth()-$indent*2;
         $line_nr = $page_space;
         $page_nr ++;
-        $pg_head = $now."  ".$outfile."-".$filename;
+        $pg_head = $now."  ".$outfile."-".str_replace($tmp_remote_dir, "", $filename);
     
         /* generate project name */
         $page->drawText($pg_head, ($limit_width-strlen($pg_head))/4, $page->getHeight()-20);
@@ -151,9 +167,14 @@ if (empty($_FILES)) {
             /* generate each line */
             while ($ind < strlen($line)) {
 
+                $line = iconv("ISO-8859-1", "UTF-8//TRANSLIT", $line);
                 $page->drawText(substr($line, $ind, $limit_width), $indent, $page->getHeight()-$line_nr);
+
                 $line_nr += $font_sz + $line_space;
                 $ind += $limit_width;
+
+                if ($page_nr_max > 0 && $page_nr_max < $page_nr)
+                    break;
 
                 if ($line_nr > $page->getHeight()-$page_space) {
     
@@ -170,14 +191,18 @@ if (empty($_FILES)) {
                     $line_nr += ($font_sz + $line_space)*2;
                 }
             }
+        
         }
     
-        if ($line_nr > $page_space) {
+        if ($page_nr_max > 0 && $page_nr_max <= $page_nr)
+            break;
+
+        if ($line_nr > $page_space)
             $pdf->pages[$page_nr] = $page;
-        }
     }
     
     $pdf->save($respath."/".$outfile.".pdf");
+    clean_path_all($tmp_remote_dir);
 
     header("Content-type: text/html; charset=utf-8");
 
@@ -186,7 +211,6 @@ if (empty($_FILES)) {
     echo "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">";
     echo "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">";
     echo "<body>";
-
     echo "<div class=\"navigator\">";
     echo "<a name=\"Navigator\"><ul>Navigator</ul></a>";
     echo "<ul>";
@@ -214,10 +238,8 @@ if (empty($_FILES)) {
 //    header("Content-type: application/pdf");
 //    header("Content-Disposition: attachment;Filename=".$outfile.".pdf");
 
-    clean_path_all($tmp_remote_dir);
-
     } catch (Exception $e) {
-       die ('Application error: ' . $e->getMessage());
+       die ('SrcView Error: ' . $e->getMessage());
     }
 }
 
