@@ -15,7 +15,7 @@ def starter():
     ret += "<head>"
     ret += "<title>Starter</title>"
     ret += "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-    ret += "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">"
+    ret += "<link href=\"/img/badsmile.jpg\" rel=\"shotcut icon\" type=\"image/x-icon\">"
     ret += "<meta charset=\"UTF-8\">"
     ret += "</head><body>"
 
@@ -135,7 +135,7 @@ def starter():
     ret += "</td>"
     
     ret += "<td class=\"normal\">"
-    ret += "<form action=\"plotting.py\" method=post>"
+    ret += "<form action=\"plotting.py\" method=\"get\">"
     ret += "<input type=\"submit\" value=\"Plot\"/><br>"
     ret += "</form>"
     ret += "</td>"
@@ -150,7 +150,6 @@ def starter():
     ret += "</table>"
     
     ret += "</div>"
-
     ret += "</body>"
     ret += "</html>"
 

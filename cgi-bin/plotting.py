@@ -197,7 +197,7 @@ def random_plot(begin, end, step = 1, titlestr = None):
     xlabel('X')
     ylabel('Y')
 #    show()
-    savefig(titlestr.replace(' ', '-').lower())
+    savefig("../img/" + titlestr.replace(' ', '-').lower())
 
 def essay_char(essay):
 
@@ -239,22 +239,14 @@ def essay_char(essay):
     for n, w in zip(xrange(len(vbuf)+1), vbuf):
         barh(n*2, w, height=1.5, left=0, align='center')
 
-    """
-    bar(xrange(1, len(vbuf)+1), height=vbuf,
-            width=[1]*len(vbuf), bottom=[0]*len(vbuf), align='center')
-#            orientation='horizontal')
-#    hist(vbuf, bins=range(1, len(vbuf)+1), #rwidth=1, bottom=0,
-#        align='mid', orientation='horizontal', alpha=0.7)
-    """
     title(titlestr)
     xlabel('Characters Count')
     ylabel('Essay Characters')
 #    show()
-    savefig(titlestr.replace(' ', '-').lower(), bbox_inches='tight', pad_inches=0)
+    savefig("../img/" + titlestr.replace(' ', '-').lower(), bbox_inches='tight', pad_inches=0)
 
 def reply():
-#    import cgi
-#    fields = cgi.FieldStorage()
+
     title = "Plots"
     
     print "Content-Type: text/html\n\n"
@@ -263,14 +255,20 @@ def reply():
     
     print "<head>"
     print "<title>", title, "</title>"
+    print "<link href=\"/img/badsmile.jpg\" rel=\"shotcut icon\" type=\"image/x-icon\">"
     print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
     print "<meta charset=\"UTF-8\">"
     print "</head>"
     
     print "<body>"
-    
-#    random_plot(1, 317, titlestr = 'Molecular Random Motion xxx')
-    essay_char(open('../res/Licence.Sample', 'ro').read())
+
+    from threading import Thread
+
+    Thread(target=random_plot, args=(1, 317, 1, 'Molecular Random Motion xxx')).start()
+
+    with open('../res/Licence.Sample', 'ro') as fd:
+        Thread(target=essay_char, args=(fd.read(),)).start()
+
     print "<table>"
     print "<tr>"
     print "<td>"
@@ -295,4 +293,30 @@ def reply():
     print "</body>"
     print "</html>"
 
-reply()
+from os import environ
+
+
+#environ['LOGNAME'] = "ag"
+#environ['USER'] = "ag"
+#environ['PATH'] = "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin"
+#environ['LANG'] = "en_US.UTF-8"
+#environ['TERM'] = "xterm"
+#environ['SHELL'] = "/bin/bash"
+#environ['XDG_SESSION_COOKIE'] = "bd331ee53e5df8ec3b7fdb9053ee165d-1414682708.549326-1922792887"
+#environ['SHLVL'] = "2"
+#environ['DISPLAY'] = "192.168.0.116:0"
+#environ['HOME'] = "/home/ag"
+#environ['USERNAME'] = "ag"
+#environ['COLORTERM'] = "gnome-terminal"
+#environ['GDMSESSION'] = "default"
+#environ['_'] = "/usr/bin/python"
+#environ['DESKTOP_SESSION'] = "default"
+#environ['OLDPWD'] = "/home/ag/lab/Starter"
+#environ['XDG_DATA_DIRS'] = "/usr/share/gnome:/usr/local/share/:/usr/share/"
+#environ['PWD'] = "/home/ag/lab/Starter/cgi-bin"
+environ['MPLCONFIGDIR'] = "/tmp"
+
+try:
+    reply()
+except Exception as e:
+    print e
