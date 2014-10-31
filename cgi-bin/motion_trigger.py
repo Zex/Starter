@@ -1,25 +1,29 @@
 #!/usr/bin/python
 
+from navi import *
 import cgi
 
 fields = cgi.FieldStorage()
 title = "Motion Trigger"
 
-print "Content-Type: text/html\n\n"
-print "<!DOCTYPE html>"
-print "<html>"
+def reply():
 
-print "<head>"
-print "<title>", title, "</title>"
-print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-print "<meta charset=\"UTF-8\">"
-print "</head>"
+    ret = ""
+    ret += "Content-Type: text/html\n\n"
+    ret += "<!DOCTYPE html>"
+    ret += "<html>"
 
-print "<body>"
+    ret += default_head(title)
+    ret += default_navigator()
 
-for k in fields.keys():
-	print "<b>", k.upper(), "</b>", fields[k].value,"<br>"
+    ret += "<body>"
+    
+    for k in fields.keys():
+    	ret += "<div>" + k.upper() + " " + fields[k].value + "</div>"
+    
+    ret += "</body>"
+    ret += "</html>"
 
-print "</body>"
-print "</html>"
+    print ret
 
+reply()
