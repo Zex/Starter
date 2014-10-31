@@ -10,32 +10,34 @@ $date_fmt =  "j M Y H:m:s";
 date_default_timezone_set('UTC');
 $now = date($date_fmt);
 
-function get_all_groups($curdir, $groups)
+function get_path_groups($path)
 {
-    $dirfd = dir($curdir);
+    $groups = [];
 
-    while (false !== ($entry = $dirfd->read())) {
+    foreach (scandir($path) as $entry) {
 
-        if (ereg("^\.", $entry))
-            continue;
+        if (ereg("^\.", $entry)) 
+            continue; 
 
-        if (is_dir($curdir."/".$entry))
-            $groups += get_all_groups($curdir."/".$entry, $groups);
-        else 
-            array_push($groups, $curdir."/".$entry);
+        $entry = $path."/".$entry;
+
+        if (is_dir($entry)) {
+            $groups += get_path_groups($entry);
+        }
+        else {
+            array_push($groups, $entry);
+        }
     }
 
     return $groups;
 }
 
-function clean_path_all($path) {
+function clean_path_all($path)
+{
+    foreach (scandir($path) as $entry) {
 
-    $dirpath = dir($path);
-
-    while (false !== ($entry = $dirpath->read())) {
-
-        if (ereg("^\.{1,2}$", $entry))
-            continue;
+        if (ereg("^\.{1,2}$", $entry)) 
+            continue; 
 
         $rm_entry = $path."/".$entry;
 
@@ -48,6 +50,26 @@ function clean_path_all($path) {
     }
 
     rmdir($path);
+}
+
+function get_src_groups($path, &$groups)
+{
+    foreach (scandir($path) as $entry) {
+
+//      if (ereg("^[^(\.)].*$", $entry)) {
+        if (ereg("^\.", $entry)) 
+            continue; 
+
+        $entry = $path."/".$entry;
+
+        if (is_dir($entry)) {
+            get_path_groups($entry, $groups);
+        }
+        else {
+            if (ereg("^.*\.(cpp|h|cxx|hpp)$", $entry))
+                array_push($groups, $entry);
+        }
+    }
 }
 
 function reply_default() {
@@ -126,16 +148,10 @@ if (empty($_FILES)) {
         $projver = "v0.0.0";
 
     $outfile = $proj."-".$projver;
-    $dirpath = $tmp_remote_dir;//"../../EasySipTs";
-    $groups = get_all_groups($dirpath, []);
+    $dirpath = $tmp_remote_dir;
     $srcs = [];
 
-    foreach ($groups as $f) {
-        if (ereg(".*\.[cpp|c|h|hpp|cxx]", $f)) {
-            array_push($srcs, $f);
-        }
-    }
-
+    get_src_groups($dirpath, $srcs);
 
     /* generate each file */
     foreach ($srcs as $filename) {
