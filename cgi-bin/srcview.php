@@ -63,7 +63,7 @@ function get_src_groups($path, &$groups)
         $entry = $path."/".$entry;
 
         if (is_dir($entry)) {
-            get_path_groups($entry, $groups);
+            get_src_groups($entry, $groups);
         }
         else {
             if (ereg("^.*\.(cpp|h|cxx|hpp)$", $entry))
@@ -150,7 +150,7 @@ if (empty($_FILES)) {
     $outfile = $proj."-".$projver;
     $dirpath = $tmp_remote_dir;
     $srcs = [];
-
+    
     get_src_groups($dirpath, $srcs);
 
     /* generate each file */
@@ -234,7 +234,6 @@ if (empty($_FILES)) {
     echo "</div>";
 
     echo "<div class=\"content\">";
-
     echo "<h2>Welcome, ".getenv("REMOTE_ADDR")."!</h2>";
     echo "<span>".getenv("HTTP_USER_AGENT")."</span><br><br>";
 
