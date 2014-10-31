@@ -3,7 +3,10 @@
 # user_info.py
 # Author: Zex <top_zlynch@yahoo.com>
 
+from navi import *
+
 def create_html(xlsname, sheetname):
+
     data = {}
     data['userid'] = [23,4,36,14,1,63,123]
     data['useremail'] = [
@@ -15,35 +18,40 @@ def create_html(xlsname, sheetname):
         'x35sd@sfsf.com',
         'x234sd@sfsf.com',
     ]
-    print "<label>helo</label>"
+
     from pandas import DataFrame
-    print "<label>helo</label>"
     xls = DataFrame(data)
     #xls.to_excel(xlsname, sheetname, index=False)
     return xls.to_html(index=False)
 
 def reply():
-    import cgi
-#    fields = cgi.FieldStorage()
+
     title = "User Info"
+    ret = ""
     
-    print "Content-Type: text/html\n\n"
-    print "<!DOCTYPE html>"
-    print "<html>"
+    ret += "Content-Type: text/html\n\n"
+    ret += "<!DOCTYPE html>"
+    ret += "<html>"
     
-    print "<head>"
-    print "<title>", title, "</title>"
-    print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-    print "<meta charset=\"UTF-8\">"
-    print "</head>"
+    ret += default_head(title) 
+    ret += default_navigator() 
+
+    ret += "<body>"
     
-    print "<body>"
+    ret += create_html('all-log-pandas.xls', 'user-info')
     
-    print create_html('all-log-pandas.xls', 'user-info')
-    
-    print "</body>"
-    print "</html>"
+    ret += "</body>"
+    ret += "</html>"
+
+    print ret
 
 #if __name__ == '__main__':
-reply()
 
+from os import environ
+
+environ['MPLCONFIGDIR'] = "/tmp"
+
+try:
+    reply()
+except Exception as e:
+    print e
