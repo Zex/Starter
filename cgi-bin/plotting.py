@@ -171,6 +171,7 @@
 #    'legend.numpoints': 2,
 #    'legend.handlelength': 2
 #   }
+from navi import *
 
 def random_plot(begin, end, step = 1, titlestr = None):
 
@@ -248,19 +249,16 @@ def essay_char(essay):
 def reply():
 
     title = "Plots"
+    ret = "" 
+    ret += "Content-Type: text/html\n\n"
+    ret += "<!DOCTYPE html>"
+    ret += "<html>"
     
-    print "Content-Type: text/html\n\n"
-    print "<!DOCTYPE html>"
-    print "<html>"
+    ret += default_head(title)
+    ret += default_navigator()
     
-    print "<head>"
-    print "<title>", title, "</title>"
-    print "<link href=\"/img/badsmile.jpg\" rel=\"shotcut icon\" type=\"image/x-icon\">"
-    print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-    print "<meta charset=\"UTF-8\">"
-    print "</head>"
-    
-    print "<body>"
+    ret += "<body>"
+    ret += "<div class=\"content\">"
 
     from threading import Thread
 
@@ -269,51 +267,35 @@ def reply():
     with open('../res/Licence.Sample', 'ro') as fd:
         Thread(target=essay_char, args=(fd.read(),)).start()
 
-    print "<table>"
-    print "<tr>"
-    print "<td>"
-    print "<img src=\"/img/molecular-random-motion-xxx.png\">"
-    print "</td>"
-    print "<td>"
-    print "<img src=\"/img/molecular-random-motion-xxx.png\">"
-    print "</td>"
-    print "<td>"
-    print "<img src=\"/img/molecular-random-motion-xxx.png\">"
-    print "</td>"
-    print "</tr>"
-    print "</table>"
-    print "<table>"
-    print "<tr>"
-    print "<td>"
-    print "<img src=\"/img/essay-char.png\">"
-    print "</td>"
-    print "</tr>"
-    print "</table>"
- 
-    print "</body>"
-    print "</html>"
+    ret += "<table class=\"normal\">"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">"
+    ret += "<img src=\"/img/molecular-random-motion-xxx.png\">"
+    ret += "</td>"
+    ret += "<td class=\"normal\">"
+    ret += "<img src=\"/img/molecular-random-motion-xxx.png\">"
+    ret += "</td>"
+    ret += "<td class=\"normal\">"
+    ret += "<img src=\"/img/molecular-random-motion-xxx.png\">"
+    ret += "</td>"
+    ret += "</tr>"
+    ret += "</table>"
+    ret += "<table class=\"normal\">"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">"
+    ret += "<img src=\"/img/essay-char.png\">"
+    ret += "</td>"
+    ret += "</tr>"
+    ret += "</table>"
+
+    ret += "</div>" 
+    ret += "</body>"
+    ret += "</html>"
+
+    print ret
 
 from os import environ
 
-
-#environ['LOGNAME'] = "ag"
-#environ['USER'] = "ag"
-#environ['PATH'] = "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin"
-#environ['LANG'] = "en_US.UTF-8"
-#environ['TERM'] = "xterm"
-#environ['SHELL'] = "/bin/bash"
-#environ['XDG_SESSION_COOKIE'] = "bd331ee53e5df8ec3b7fdb9053ee165d-1414682708.549326-1922792887"
-#environ['SHLVL'] = "2"
-#environ['DISPLAY'] = "192.168.0.116:0"
-#environ['HOME'] = "/home/ag"
-#environ['USERNAME'] = "ag"
-#environ['COLORTERM'] = "gnome-terminal"
-#environ['GDMSESSION'] = "default"
-#environ['_'] = "/usr/bin/python"
-#environ['DESKTOP_SESSION'] = "default"
-#environ['OLDPWD'] = "/home/ag/lab/Starter"
-#environ['XDG_DATA_DIRS'] = "/usr/share/gnome:/usr/local/share/:/usr/share/"
-#environ['PWD'] = "/home/ag/lab/Starter/cgi-bin"
 environ['MPLCONFIGDIR'] = "/tmp"
 
 try:
