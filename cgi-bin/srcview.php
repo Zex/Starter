@@ -5,6 +5,8 @@
  */
 
 require_once 'Zend/Loader/Autoloader.php';
+include_once 'navi.php';
+
 $loader = Zend_Loader_Autoloader::getInstance();
 $date_fmt =  "j M Y H:m:s";
 date_default_timezone_set('UTC');
@@ -78,18 +80,11 @@ function reply_default() {
 
     echo "<!DOCTYPE html>";
     echo "<html>";
-    echo "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">";
-    echo "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">";
+
     echo "<body>";
 
-    echo "<div class=\"navigator\">";
-    echo "<a name=\"Navigator\"><ul>Navigator</ul></a>";
-    echo "<ul>";
-    echo "<li><a href=\"starter.py#Motions\" title=\"Motions\">Motions</a></li>";
-    echo "<li><a href=\"starter.py#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>";
-    echo "<li><a href=\"starter.py#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>";
-    echo "</ul>";
-    echo "</div>";
+    default_head("SrcView");
+    default_navigator();
 
     echo "<div class=\"content\">";
 
