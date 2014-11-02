@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import cgi
+from navi import *
 
 fields = cgi.FieldStorage()
 title = "Hello Baby"
