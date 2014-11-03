@@ -19,18 +19,38 @@ def svn_cat(cur_path):
     try:
 
         from subprocess import check_output
+        from re import match
 
-        buf = check_output(['svn', 'cat', cur_path] + svn_opt)
+        
+        if match('.*[jpg|png|bmp|jpeg]$', cur_path) != None:
 
-#        ret += "<table class=\"source_ln\">"
-#        for i in xrange(1, buf.count('\n')+1):
-#            ret += "<tr><td><span>" + str(i) + "</span></td></tr>"
-#        ret += "</table>"
+            from os.path import basename
 
-        ret += "<div class=\"normal\">"
-        ret += "<textarea class=\"source\" readonly rows=\"" + str(buf.count('\n')) + "\">"
-        ret += buf
-        ret += "</textarea></div>"
+            buf = check_output(['svn', 'cat', cur_path] + svn_opt)
+
+            with file('/tmp/'+basename(cur_path), 'w') as fd:
+                fd.write(buf)
+
+            from PIL import Image
+
+            img = Image.open('/tmp/'+basename(cur_path))
+
+            ret += "<div "# class=\"source\" "
+            ret += "width=\"" + str(img.size[0]) + "\" height=\"" + str(img.size[1]) + "\">"
+            #ret += "width=\"" + "100%" + "\" height=\"" + "100%" + "\"/>"
+            
+            ret += "<img src=\"/tmp/" + basename(cur_path) + "\" alt=\"" + basename(cur_path) + "\" "
+            ret += "width=\"" + "100%" + "\" height=\"" + "100%" + "\"/>"
+            ret += "</div>"
+
+        else:
+
+            buf = check_output(['svn', 'cat', cur_path] + svn_opt)
+    
+            ret += "<div class=\"normal\">"
+            ret += "<textarea class=\"source\" readonly rows=\"" + str(buf.count('\n')) + "\">"
+            ret += buf
+            ret += "</textarea></div>"
 
     except Exception as e:
 
