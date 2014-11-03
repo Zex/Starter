@@ -67,6 +67,23 @@ input[type=text], input[type=submit], label, textarea, select {
     margin-right: 0;
 }
 
+textarea.source {
+    font-family: comic sans ms;
+    font-size: 12px;
+    color: #00ff00;
+    background-color: #123456;
+    resize: none;
+    margin-left: 0;/* 5%; */
+    width: 100%;
+}
+
+table.source_ln {
+    font-family: comic sans ms;
+    font-size: 12px;
+    color: #00ff00;
+    background-color: #123456;
+    margin-left: 2%;
+}
 
 a:visited {
     color:#d53030;
