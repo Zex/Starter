@@ -37,8 +37,13 @@ def reply():
     ret += default_navigator() 
 
     ret += "<body>"
-    
-    ret += create_html('all-log-pandas.xls', 'user-info')
+    ret += "<div class=\"content\" align=\"center\">"
+
+    buf = create_html('all-log-pandas.xls', 'user-info')
+    for tag in ['table', 'th', 'tr', 'td']:
+        buf = buf.replace('<' + tag + ' ', '<' + tag + ' class=\"normal\" ')
+    ret += buf
+    ret += "</div>"
     
     ret += "</body>"
     ret += "</html>"
