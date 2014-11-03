@@ -6,21 +6,27 @@ from navi import *
 fields = cgi.FieldStorage()
 title = "Hello Baby"
 
-print "Content-Type: text/html\n\n"
-print "<!DOCTYPE html>"
-print "<html>"
+def reply():
 
-print "<head>"
-print "<title>", title, "</title>"
-print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-print "<meta charset=\"UTF-8\">"
-print "</head>"
+    ret = ""
 
-print "<body>"
+    ret += "Content-Type: text/html\n\n"
+    ret += "<!DOCTYPE html>"
+    ret += "<html>"
 
-for k in fields.keys():
-	print k, fields[k].value
+    ret += default_head(title)
+    ret += default_navigator()
 
-print "</body>"
-print "</html>"
+    ret += "<body>"
+    ret += "<div class=\"content\">"
 
+    for k in fields.keys():
+	    ret += "<div>" + k + " => " + fields[k].value + "</div>"
+
+    ret += "</div>"
+    ret += "</body>"
+    ret += "</html>"
+
+    print ret
+
+reply()
