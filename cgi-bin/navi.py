@@ -8,6 +8,7 @@ def default_navigator():
     ret += "<ul>"
     ret += "<li><a href=\"starter.py#YouOut\" title=\"You Out\">You Out</a></li>"
     ret += "<li><a href=\"starter.py#Motions\" title=\"Motions\">Motions</a></li>"
+    ret += "<li><a href=\"starter.py#ConnSVN\" title=\"ConnSVN\">Connect to SVN</a></li>"
     ret += "<li><a href=\"starter.py#RandomSeq\" title=\"Random Seq\">Random Seq</a></li>"
     ret += "<li><a href=\"starter.py#LeaveMessage\" title=\"Leave a Message\">Leave a Message</a></li>"
     ret += "</ul>"
