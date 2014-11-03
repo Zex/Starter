@@ -5,12 +5,16 @@
 #
 
 from navi import *
+import cgi
+
+fields = cgi.FieldStorage()
 
 def starter():
 
     import time
     
     ret = "Content-Type: text/html\n\n"
+#    ret += "Set-Cookie: username=howdie\n\n"
     ret += "<!DOCTYPE html>"
     ret += "<html>"
     
@@ -22,6 +26,10 @@ def starter():
     ret += "<div class=\"normal\">"
     ret += "<img src=\"/img/cattail.jpg\" height=200px>"
     ret += "</div>"
+
+#    from cgi import os
+#    for k in os.environ.keys():
+#        ret += "<span>" + k + " => " + os.environ[k] + "</span><br><br>"
 
     ret += "<div class=\"normal\">"
     ret += "<a name=\"YouOut\"></a>"
