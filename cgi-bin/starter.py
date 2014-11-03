@@ -24,6 +24,7 @@ def starter():
     ret += "</div>"
 
     ret += "<div class=\"normal\">"
+    ret += "<a name=\"YouOut\"></a>"
     ret += "<a href=\"#Navigator\" title=\"Navigator\">Navigator</a>"
     ret += "<form name=\"Youout\" action=\"youout.py\" method=\"get\">"
     ret += "<label for=\"total_player\"><b>Total player: </b></label>"
@@ -76,9 +77,10 @@ def starter():
     
     options = [ "Go", "Walk Away", "Close", "Laught" ]
     ret += "<div class=\"normal\">"
+    ret += "<a name=\"Motions\"></a>"
     ret += "<a href=\"#Navigator\" title=\"Navigator\">Navigator</a>"
     ret += "<form action=\"motion_trigger.py\" method=\"post\">"
-    ret += "<label for=option><a name=\"Motions\"><b>Motions</b></a>:</label><br>"
+    ret += "<label for=option><b>Motions</b></a>:</label><br>"
     ret += "<select name=option>"
     
     for o in options:
@@ -90,15 +92,22 @@ def starter():
     ret += "</div>"
     
     ret += "<div class=\"normal\">"
-    ret += "<label><b>Current time: </b><label>"
-    ret += "<input id=\"cur_time\" type=\"text\" readonly=\"true\" value=\"" + time.strftime(time.asctime()) + "\"/><br>"
+    ret += "<a name=\"ConnSVN\"></a>"
+    ret += "<form action=\"conn_svn.py\" method=\"post\">"
+    ret += "<input type=\"submit\" name=\"ConnSVN\" value=\"Connect SVN\"/>"
     ret += "</form>"
     ret += "</div>"
+#    ret += "<div class=\"normal\">"
+#    ret += "<label><b>Current time: </b><label>"
+#    ret += "<input id=\"cur_time\" type=\"text\" readonly=\"true\" value=\"" + time.strftime(time.asctime()) + "\"/><br>"
+#    ret += "</form>"
+#    ret += "</div>"
     
     ret += "<div class=\"normal\">"
+    ret += "<a name=\"LeaveMessage\"></a>"
     ret += "<a href=\"#Navigator\" title=\"Navigator\">Navigator</a>"
     ret += "<form action=\"leave_message.py\" method=\"post\">"
-    ret += "<a name=\"LeaveMessage\"><label for=msgbox><b>Leave a Message: </b></label></a><br>"
+    ret += "<label for=msgbox><b>Leave a Message: </b></label><br>"
     ret += "<textarea id=\"msgbox\" name=\"msgbox\"></textarea><br>"
     ret += "<input type=\"submit\" value=\"Submit\"/><br>"
     ret += "</form>"
@@ -115,8 +124,9 @@ def starter():
     ret += "</td>"
     
     ret += "<td class=\"normal\">"
+    ret += "<a name=\"RandomSeq\"></a>"
     ret += "<form action=\"ranseq.py\" method=\"get\">"
-    ret += "<a name=\"RandomSeq\"><input type=\"submit\" value=\"Random Seq\"/></a><br>"
+    ret += "<input type=\"submit\" value=\"Random Seq\"/><br>"
     ret += "</form>"
     ret += "</td>"
     
