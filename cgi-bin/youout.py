@@ -39,17 +39,17 @@ if __name__ == '__main__':
     
     if fields.has_key('total_player') and fields.has_key('unlucky_n'):
 
-        ret += "<div>"
+        ret += "<div class=\"normal\">"
         ret += "<label for=total_player><b>Total player: </b></label>"
-        ret += "<input type=text name=\"total_player\" readonly=\"true\" value=\""+fields['total_player'].value+"\"/><br>"
+        ret += "<input type=text name=\"total_player\" readonly=\"true\" value=\""+str(fields['total_player'].value)+"\"/><br>"
         ret += "</div>"
-        ret += "<div>"
+        ret += "<div class=\"normal\">"
         ret += "<label for=\"unlucky_n\"><b>Unlucky N: </b></label>"
-        ret += "<input type=text name=\"unlucky_n\" readonly=\"true\" value=\""+fields['unlucky_n'].value+"\"/><br>"
+        ret += "<input type=text name=\"unlucky_n\" readonly=\"true\" value=\""+str(fields['unlucky_n'].value)+"\"/><br>"
         ret += "</div>"
-        ret += "<div>"
+        ret += "<div class=\"normal\">"
         ret += "<label><b>Lucky Dog: </b><label>"
-        ret += "<label><b>", youout(int(fields['total_player'].value), int(fields['unlucky_n'].value)), "</b></label><br>"
+        ret += "<span><b>" + youout(int(fields['total_player'].value), int(fields['unlucky_n'].value)) + "</b></span><br>"
         ret += "</div>"
   
     else:
