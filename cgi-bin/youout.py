@@ -6,6 +6,7 @@
 # Author: zex <top_zlynch@yahoo.com>
 
 import cgi
+from navi import *
 
 def youout(total, n):
 
@@ -24,34 +25,41 @@ if __name__ == '__main__':
 
     fields = cgi.FieldStorage()
     title = "YouOut!"
+   
+    ret = "" 
+    ret += "Content-Type: text/html\n\n"
+    ret += "<!DOCTYPE html>"
+    ret += "<html>"
+   
+    ret += default_head(title)
+    ret += default_navigator()
+ 
+    ret += "<body>"
+    ret += "<div class=\"content\">"
     
-    print "Content-Type: text/html\n\n"
-    print "<!DOCTYPE html>"
-    print "<html>"
-    
-    print "<head>"
-    print "<title>", title, "</title>"
-    print "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">"
-    print "<meta charset=\"UTF-8\">"
-    print "</head>"
-    
-    print "<body>"
-    
-    print "<div>"
-    print "<label for=total_player><b>Total player: </b></label>"
-    print "<input type=text name=\"total_player\" readonly=\"true\" value=\""+fields['total_player'].value+"\"/><br>"
-    print "</div>"
-    print "<div>"
-    print "<label for=\"unlucky_n\"><b>Unlucky N: </b></label>"
-    print "<input type=text name=\"unlucky_n\" readonly=\"true\" value=\""+fields['unlucky_n'].value+"\"/><br>"
-    print "</div>"
-    print "<div>"
-    print "<label><b>Lucky Dog: </b><label>"
-    print "<label><b>", youout(int(fields['total_player'].value), int(fields['unlucky_n'].value)), "</b></label><br>"
-    print "</div>"
-    
-    print "</body>"
-    print "</html>"
+    if fields.has_key('total_player') and fields.has_key('unlucky_n'):
+
+        ret += "<div>"
+        ret += "<label for=total_player><b>Total player: </b></label>"
+        ret += "<input type=text name=\"total_player\" readonly=\"true\" value=\""+fields['total_player'].value+"\"/><br>"
+        ret += "</div>"
+        ret += "<div>"
+        ret += "<label for=\"unlucky_n\"><b>Unlucky N: </b></label>"
+        ret += "<input type=text name=\"unlucky_n\" readonly=\"true\" value=\""+fields['unlucky_n'].value+"\"/><br>"
+        ret += "</div>"
+        ret += "<div>"
+        ret += "<label><b>Lucky Dog: </b><label>"
+        ret += "<label><b>", youout(int(fields['total_player'].value), int(fields['unlucky_n'].value)), "</b></label><br>"
+        ret += "</div>"
+  
+    else:
+        ret += "<span>No parameter given</span>"
+ 
+    ret += "</div>" 
+    ret += "</body>"
+    ret += "</html>"
+
+    print ret
 
 #if __name__ == '__main__':
 #    youout(15, 3)
