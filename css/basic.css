@@ -67,6 +67,10 @@ input[type=text], input[type=submit], label, textarea, select {
     margin-right: 0;
 }
 
+img.source {
+    align: center;
+}
+
 textarea.source {
     font-family: comic sans ms;
     font-size: 12px;
@@ -97,6 +101,12 @@ div.normal, p {
     margin-left: 2%;
     margin-right: 2%;
     line-height: 3em;
+}
+
+div.source {
+    margin-left: 0;
+    margin-right: 0;
+    align: center;
 }
 
 textarea {
