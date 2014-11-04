@@ -62,6 +62,23 @@ table.normal {
     width: 96%; 
 }
 
+table.login {
+    background-color: #333933;
+    color: #79a3d8;
+    margin-left: 30%;
+    margin-right: 20%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    border-spacing: 5px;
+}
+
+th.login, tr.login, td.login {
+    background-color: #333933;
+    color: #79a3d8;
+/*    border: 3px dotted #740392; */
+    border-spacing: 5px;
+}
+
 input[type=text], input[type=submit], label, textarea, select {
     margin-left: 0;
     margin-right: 0;
