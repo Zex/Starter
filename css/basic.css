@@ -41,7 +41,13 @@ img {
 /*    height: 200px; */
 }
 
-th.normal, tr.normal, td.normal {
+th.normal {
+    background-color: #a53089;
+    color: #837192;
+    border: 3px solid #157401;
+}
+
+tr.normal, td.normal {
     background-color: #152079;
     color: #837192;
     border: 3px solid #157401;
@@ -72,7 +78,13 @@ table.login {
     border-spacing: 5px;
 }
 
-th.login, tr.login, td.login {
+th.login {
+    background-color: #333933;
+    color: #79a3d8;
+    border-spacing: 5px;
+}
+
+tr.login, td.login {
     background-color: #333933;
     color: #79a3d8;
 /*    border: 3px dotted #740392; */
