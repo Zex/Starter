@@ -15,41 +15,42 @@ def ranseq(length):
     ancient_b = [randint(1, 1000) for i in xrange(int(length))]
 
     ret = ""
-    ret += "<tr>"
-    ret += "<td>Ancient a: </td><td><span contenteditable=\"false\">" + str(ancient_a) + "</span></td>"
+    ret += "<table class=\"content\">"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">Ancient a: </td><td class=\"normal\"><span contenteditable=\"false\">" + str(ancient_a) + "</span></td>"
     ret += "</tr>"
-    ret += "<tr>"
-    ret += "<td>Ancient b: </td><td><span contenteditable=\"false\">" + str(ancient_b) + "</span></td>"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">Ancient b: </td><td class=\"normal\"><span contenteditable=\"false\">" + str(ancient_b) + "</span></td>"
     ret += "</tr>"
 
     ancient_a.extend(ancient_b)
     ancient_a.sort()
 
-    ret += "<tr>"
-    ret += "<td>Ancient a: </td><td><span contenteditable=\"false\">" + str(ancient_a) + "</span></td>"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">Ancient a: </td><td class=\"normal\"><span contenteditable=\"false\">" + str(ancient_a) + "</span></td>"
     ret += "</tr>"
 
     child_min = ancient_a[:(len(ancient_a)-2)/2]
     child_max = ancient_a[(len(ancient_a)-2)/2:-2]
 
-    ret += "<tr>"
-    ret += "<td>child_min: </td><td><span contenteditable=\"false\">" + str(child_min) + "</span></td>"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">child_min: </td><td class=\"normal\"><span contenteditable=\"false\">" + str(child_min) + "</span></td>"
     ret += "</tr>"
-    ret += "<tr>"
-    ret += "<td>child_max: </td><td><span contenteditable=\"false\">" + str(child_max) + "</span></td>"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">child_max: </td><td class=\"normal\"><span contenteditable=\"false\">" + str(child_max) + "</span></td>"
     ret += "</tr>"
 
     child_min.append(ancient_a[-1])
     child_max.append(ancient_a[-2])
 
-    ret += "<tr>"
-    ret += "<td>child_min sum: </td><td><span contenteditable=\"false\">" + str(reduce(lambda x,y:x+y, child_min)) + "</span></td>"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">child_min sum: </td><td class=\"normal\"><span contenteditable=\"false\">" + str(reduce(lambda x,y:x+y, child_min)) + "</span></td>"
     ret += "</tr>"
-    ret += "<tr>"
-    ret += "<td>child_max sum: </td><td><span contenteditable=\"false\">" + str(reduce(lambda x,y:x+y, child_max)) + "</span></td>"
+    ret += "<tr class=\"normal\">"
+    ret += "<td class=\"normal\">child_max sum: </td><td class=\"normal\"><span contenteditable=\"false\">" + str(reduce(lambda x,y:x+y, child_max)) + "</span></td>"
     ret += "</tr>"
-#    ret += "---------------------------------------------------------+"
     ret += "</table>"
+#    ret += "---------------------------------------------------------+"
     return ret
 
 def reply():
@@ -65,13 +66,17 @@ def reply():
     ret += default_navigator() 
 
     ret += "<body>"
-    
+    ret += "<div class=\"content\">"
+   
     for i in [100, 10, 1000, 999, 3]:
         ret += "<h2>" + "Ranseq with " + str(i) + "</h2>"
         ret += ranseq(i)
-    
+
+   
+    ret += "</div>" 
     ret += "</body>"
     ret += "</html>"
 
     print ret
+
 reply()
