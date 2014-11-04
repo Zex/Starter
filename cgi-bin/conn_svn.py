@@ -10,7 +10,6 @@ title = "Connect SVN"
 svn_addr_prefix = "svn://"
 svn_addr = "192.168.0.104"
 svn_top_path = svn_addr_prefix + svn_addr + '/11002/code/LinuxC/'
-#svn_opt = ['--username', 'liyun', '--password', 'ag111111', '--no-auth-cache', '--non-interactive']
 
 def svn_cat(cur_path, usern, passw):
 
@@ -54,7 +53,7 @@ def svn_cat(cur_path, usern, passw):
 
     except Exception as e:
 
-        ret += "<div>" + e.message + "</div>"
+        raise e
 
     return ret
 
@@ -94,7 +93,7 @@ def svn_list(cur_path, usern, passw):
 
     except Exception as e:
 
-        ret += "<div>" + e.message + "</div>"
+        raise e
 
     return ret
 
@@ -146,11 +145,13 @@ def svn_login(usern=None, passw=None):
 
     except Exception as e:
 
-        ret += "<div class=\"normal\">" + e.message + "</div>"
+        raise e
 
     return ret
 
 def reply():
+
+    from cgi import os
 
     ret = ""
 
@@ -167,19 +168,20 @@ def reply():
     svn_cur_path = ""
 
     try:
- 
+
         if not fields.has_key('op'):
 
             ret += svn_login()
  
         else:
 
+
             if fields.has_key('usern') and fields.has_key('passw'):
         
                 if fields['op'].value == 'login':
         
                     cookie = "Set-Cookie: usern=" + fields['usern'].value + '\n'
-                    cookie += "Set-Cookie: passw=" + fields['passw'].value + ";Expires=" + str(24*60*60) + '\n'
+                    cookie += "Set-Cookie: passw=" + fields['passw'].value + ";Expires=" + str(60*60) + '\n'
         
                     ret = cookie + ret
                     ret += svn_login(fields['usern'].value, fields['passw'].value)
@@ -198,15 +200,11 @@ def reply():
                     else:
                         ret += svn_list(svn_cur_path, fields['usern'].value, fields['passw'].value)
         
-            else:
-        
-                from cgi import os
-        
-                if os.environ.has_key('HTTP_COOKIE'):
-        
+            elif os.environ.has_key('HTTP_COOKIE'):
+                     
                     buf = os.environ['HTTP_COOKIE']
                     cookie ={ e.split('=')[0].strip():e.split('=')[1].strip() for e in buf.split(';') }
-        
+      
                     if cookie.has_key('usern') and cookie.has_key('passw'):
         
                         if fields.has_key('path'):
@@ -224,10 +222,13 @@ def reply():
                     else:
         
                         ret += svn_login()
+            else:
+
+                 ret += svn_login()
 
 
     except Exception as e:
-        ret += "<div>" + e.message + "</div>"
+        ret += svn_login()
 
     ret += "</div>"
     ret += "</body>"
