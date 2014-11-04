@@ -36,25 +36,42 @@ if __name__ == '__main__':
  
     ret += "<body>"
     ret += "<div class=\"content\">"
-    
-    if fields.has_key('total_player') and fields.has_key('unlucky_n'):
 
-        ret += "<div class=\"normal\">"
-        ret += "<label for=total_player><b>Total player: </b></label>"
-        ret += "<input type=text name=\"total_player\" readonly=\"true\" value=\""+str(fields['total_player'].value)+"\"/><br>"
-        ret += "</div>"
-        ret += "<div class=\"normal\">"
-        ret += "<label for=\"unlucky_n\"><b>Unlucky N: </b></label>"
-        ret += "<input type=text name=\"unlucky_n\" readonly=\"true\" value=\""+str(fields['unlucky_n'].value)+"\"/><br>"
-        ret += "</div>"
-        ret += "<div class=\"normal\">"
-        ret += "<label><b>Lucky Dog: </b><label>"
-        ret += "<span><b>" + youout(int(fields['total_player'].value), int(fields['unlucky_n'].value)) + "</b></span><br>"
-        ret += "</div>"
-  
-    else:
-        ret += "<span>No parameter given</span>"
+    try:
+    
+        if fields.has_key('total_player') and fields.has_key('unlucky_n'):
+    
+            ret += "<div class=\"normal\">"
+            ret += "<label for=total_player><b>Total player: </b></label>"
+            ret += "<input type=text name=\"total_player\" readonly=\"true\" value=\""+str(fields['total_player'].value)+"\"/><br>"
+            ret += "</div>"
+            ret += "<div class=\"normal\">"
+            ret += "<label for=\"unlucky_n\"><b>Unlucky N: </b></label>"
+            ret += "<input type=text name=\"unlucky_n\" readonly=\"true\" value=\""+str(fields['unlucky_n'].value)+"\"/><br>"
+            ret += "</div>"
+            ret += "<div class=\"normal\">"
+
+            if fields['total_player'].value.isdigit() and fields['unlucky_n'].value.digit():
+
+                ret += "<label><b>Lucky Dog: </b><label>"
+                ret += "<span><b>" + youout(int(fields['total_player'].value), int(fields['unlucky_n'].value)) + "</b></span><br>"
+
+            else:
+
+                ret += "<span>" + "Total player and unlucky one should be digits" + "</span>"
+
+            ret += "</div>"
+      
+        else:
+
+            ret += "<span>No parameter given</span>"
  
+    except Exception as e:
+
+        ret += "<div>" + e.message + "</div>"
+        ret += "<span>No parameter given</span>"
+
+
     ret += "</div>" 
     ret += "</body>"
     ret += "</html>"
