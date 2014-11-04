@@ -14,8 +14,6 @@ def survey():
 
     from cgi import os
 
-    title = "WhereYouLive"
-    
     ret = "Content-Type: text/html\n\n"
     ret += "<!DOCTYPE html>"
     ret += "<html>"
@@ -34,10 +32,14 @@ def survey():
     for a in whereyoulive_sum.addresses:#preset("../res/Addrs.Sample"):
         ret += "<input type=\"radio\" name=\"addr\" value=\"" + str(a) + "\"/> <b>" + str(a) + "</b><br>"
 
+    ret += "<br>"
     ret += "<label for=\"elseaddr\">" + "Somewhere Else ..." + "</label><br>"
     ret += "<input type=\"text\" name=\"elseaddr\"/><br>"
+
+    ret += "<br><br>"
+    ret += "<input type=\"submit\" value=\"" + "Submit" + "\"/>"
     ret += "</form>"
-   
+
     ret += "</div>" 
     ret += "</body>"
     ret += "</html>"

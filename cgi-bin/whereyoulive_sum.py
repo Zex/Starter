@@ -90,14 +90,21 @@ def reply(kwargs):
     ret += "<body>"
     ret += "<div class=\"content\">"
 
-    if kwargs.has_key('addr'):
-        whereyoulive(kwargs['addr'].value)
-    elif kwargs.has_key('elseaddr'):
-        whereyoulive(kwargs['elseaddr'].value)
-    else:
-        ret += "<span>No address selected. <span>Previous Result</span><br>"
+    try:
 
-    ret += whereyoulive_sum()
+        if kwargs.has_key('addr'):
+            whereyoulive(kwargs['addr'].value)
+        elif kwargs.has_key('elseaddr'):
+            whereyoulive(kwargs['elseaddr'].value)
+        else:
+            ret += "<span>No address selected. <span>Previous Result</span><br>"
+    
+        ret += whereyoulive_sum()
+
+    except Exception as e:
+
+        ret += "<div>" + e.message + "</div>"
+
 
     ret += "</div>"
     ret += "</body>"
@@ -106,3 +113,7 @@ def reply(kwargs):
     return ret
 
 preset(sample)
+
+if __name__ == '__main__':
+
+    print reply({})
