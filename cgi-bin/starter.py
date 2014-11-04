@@ -24,7 +24,8 @@ def starter():
     ret += "<body>"
     ret += "<div class=\"content\">"
     ret += "<div class=\"normal\">"
-    ret += "<img src=\"/img/cattail.jpg\" height=200px>"
+#    ret += "<img src=\"/img/cattail.jpg\" height=200px>"
+    ret += "<img src=\"/img/detective-sky.jpg\" height=100px>"
     ret += "</div>"
 
 #    from cgi import os
