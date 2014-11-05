@@ -81,11 +81,10 @@ function reply_default() {
     echo "<!DOCTYPE html>";
     echo "<html>";
 
-    echo "<body>";
-
     default_head("SrcView");
     default_navigator();
 
+    echo "<body>";
     echo "<div class=\"content\">";
 
     echo "<h2>Welcome, ".getenv("REMOTE_ADDR")."!</h2>";
@@ -216,8 +215,8 @@ if (empty($_FILES)) {
 
     echo "<!DOCTYPE html>";
     echo "<html>";
-    echo "<link href=\"/css/basic.css\" rel=\"stylesheet\" type=\"text/css\">";
-    echo "<link href=\"/img/badsmile.jpg\" rel=\"icon\" type=\"image/jpg\">";
+    default_head("SrcView");
+    default_navigator();
     echo "<body>";
     echo "<div class=\"navigator\">";
     echo "<a name=\"Navigator\"><ul>Navigator</ul></a>";
