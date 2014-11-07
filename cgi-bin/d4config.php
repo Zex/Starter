@@ -4,16 +4,17 @@
  * Author: Zex <top_zlynch@yahoo.com>
  */
 
-include_once 'sqlite3';
 include_once 'navi.php';
 
-$CONFDB = "/home/ag/lab/Starter/dbs/UserConf.db";
-$CONFTABLE = "UserConf";
+$CONFDB = "/home/ag/lab/Starter/dbs/config.db";
+$SYSCONFTABLE = "SysConf";
+$USERCONFTABLE = "UserConf";
 
 function update_configure()
 {
     global $CONFDB;
-    global $CONFTABLE;
+    global $SYSCONFTABLE;
+    global $USERCONFTABLE;
 
     if (!($conn = new SQLite3($CONFDB)))
     {
@@ -25,9 +26,12 @@ function update_configure()
         {
             foreach ($_POST as $k => $v)
             {
-                $sql = "update ".$CONFTABLE." set Value=\"".$v."\" where Key == \"".str_replace('_', '.', $k)."\";";
-            }
+                $item = ltrim(strrchr($k,'_'), '_');
+                $key = rtrim(str_replace($item, "", $k), '_');
+                $sql = "update ".$SYSCONFTABLE." set ".$item."=\"".$v."\" where Key == \"".str_replace('_', '.', $key)."\";";
 
+                $conn->exec($sql);
+            }
             echo "<div><span>"."Configure updated !"."</span></div>";
         }
         catch (Exception $e)
@@ -39,16 +43,21 @@ function update_configure()
     $conn->close();
 }
 
-function default_reply()
+function read_sysconf()
 {
     global $CONFDB;
-    global $CONFTABLE;
-
+    global $SYSCONFTABLE;
+    global $USERCONFTABLE;
    
+
     if (!($conn = new SQLite3($CONFDB)))
         echo $conn->lastErrorMsg();
- 
-    $sql = "select Key, Value from ".$CONFTABLE.";";
+
+    $titles = ["Key", "DefaultValue", "Step", "Upper", "Lower", "Unit"]; 
+
+    $sql = "select ".join(",", $titles);
+    $sql.rtrim(",");
+    $sql .= " from ".$SYSCONFTABLE.";";
     
     if (!($ret = $conn->query($sql)))
     {
@@ -56,33 +65,88 @@ function default_reply()
     }
     else
     {
-        echo "<h2>"."Configure for 3D/4D"."</h2>";
-
         echo "<form action=\"d4config.php\" method=\"post\" enctype=\"multipart/form-data\">";
-        echo "<table width=\"60%\" align=\"center\">";
+        echo "<table class=\"normal\">";
+
+        echo "<tr class=\"normal\">";
+        foreach ($titles as $t)
+            echo "<th class=\"normal\">".$t."</th>";
+        echo "</tr>";
 
         while ($row = $ret->fetchArray(SQLITE3_ASSOC))
         {
             echo "<tr class=\"normal\">";
+            echo "<td class=\"normal\">"."<span>".$row['Key']."</span>"."</td>";
 
-            echo "<td class=\"normal\">";
-            echo "<span>".$row['Key']."</span>";
-            echo "</td>";
+            foreach ($titles as $t)
+            {
+                if ($t == 'Key') continue;
 
-            echo "<td class=\"normal\">";
-            echo "<input name=\"".$row['Key']."\" width=\"100%\" type=\"text\" value=\"".$row['Value']."\"/>";
-            echo "</td>";
+                echo "<td class=\"normal\">";
+                echo "<input name=\"".$row['Key'].".".$t."\" type=\"text\" value=\"".$row[$t]."\"/>";
+                echo "</td>";
+            }
 
             echo "</tr>";
         }
 
-        echo "<tr>";
-        echo "<td>";
-        echo "<input type=\"submit\" value=\""."Submit"."\"/>";
-        echo "<td>";
-        echo "</tr>";
         echo "</table>";
+        echo "<input type=\"submit\" value=\""."Submit"."\"/>";
         echo "</form>";
+
+    }
+
+    $conn->close();
+}
+
+function read_userconf()
+{
+    global $CONFDB;
+    global $SYSCONFTABLE;
+    global $USERCONFTABLE;
+   
+
+    if (!($conn = new SQLite3($CONFDB)))
+        echo $conn->lastErrorMsg();
+
+    $titles = ["Key", "Value"];
+
+    $sql = "select ".join(",", $titles);
+    $sql.rtrim(",");
+    $sql .= " from ".$USERCONFTABLE.";";
+
+    if (!($ret = $conn->query($sql)))
+    {
+        echo $conn->lastErrorMsg();
+    }
+    else
+    {
+        echo "<table class=\"normal\">";
+
+        echo "<tr class=\"normal\">";
+        foreach ($titles as $t)
+            echo "<th class=\"normal\">".$t."</th>";
+        echo "</tr>";
+
+        while ($row = $ret->fetchArray(SQLITE3_ASSOC))
+        {
+            echo "<tr class=\"normal\">";
+            echo "<td class=\"normal\">"."<span>".$row['Key']."</span>"."</td>";
+
+            foreach ($titles as $t)
+            {
+                if ($t == 'Key') continue;
+
+                echo "<td class=\"normal\">";
+                echo "<input name=\"".$row['Key'].'.'.$t."\" type=\"text\" value=\"".$row[$t]."\"/>";
+                echo "</td>";
+            }
+
+            echo "</tr>";
+        }
+
+        echo "</table>";
+
     }
     
     $conn->close();
@@ -97,15 +161,21 @@ function reply()
     echo "<html>";
     
     default_head("4D Config");
-    default_navigator();
     
     echo "<body>";
+    default_navigator();
     echo "<div class=\"content\">";
 
     if (!empty($_POST))
-        update_configure($conn);
+        update_configure();
 
-    default_reply();
+    echo "<h1>"."Configure for 3D/4D"."</h1>";
+
+    echo "<h2>"."System Configure"."</h2>";
+    read_sysconf();
+
+    echo "<h2>"."User Configure"."</h2>";
+    read_userconf();
 
     echo "</div>";
     echo "</body>";
