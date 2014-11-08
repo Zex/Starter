@@ -22,25 +22,22 @@ function update_configure()
     }
     else
     {
-        try
-        {
             foreach ($_POST as $k => $v)
             {
                 $item = ltrim(strrchr($k,'_'), '_');
                 $key = rtrim(str_replace($item, "", $k), '_');
                 $sql = "update ".$SYSCONFTABLE." set ".$item."=\"".$v."\" where Key == \"".str_replace('_', '.', $key)."\";";
 
-                $conn->exec($sql);
+                if (!($ret = $conn->query($sql)))
+                    echo "<div>".$conn->lastErrorMsg()."</div>";
+                
+                else
+                    echo "<div><span>"."Configure updated !"."</span></div>";
             }
-            echo "<div><span>"."Configure updated !"."</span></div>";
-        }
-        catch (Exception $e)
-        {
-            echo "<div>".$conn->lastErrorMsg()."</div>";
-        }
-    }
+
+     }
     
-    $conn->close();
+     $conn->close();
 }
 
 function read_sysconf()
