@@ -62,7 +62,7 @@ function read_sysconf()
     }
     else
     {
-        echo "<form action=\"d4config.php\" method=\"post\" enctype=\"multipart/form-data\">";
+        echo "<form action=\"d4config.php?u=1\" method=\"post\" enctype=\"multipart/form-data\">";
         echo "<table class=\"normal\">";
 
         echo "<tr class=\"normal\">";
@@ -163,7 +163,7 @@ function reply()
     default_navigator();
     echo "<div class=\"content\">";
 
-    if (!empty($_POST))
+    if (!empty($_POST) && $_POST["u"] == 1)
         update_configure();
 
     echo "<h1>"."Configure for 3D/4D"."</h1>";
