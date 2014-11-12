@@ -33,8 +33,8 @@ function update_configure()
                 if (!($ret = $conn->query($sql)))
                     throw new Exception($conn->lastErrorMsg());
                 
-                else
-                    echo "<div><span>"."Configure updated !"."</span></div>";
+//                else
+//                    echo "<div><span>"."Configure updated !"."</span></div>";
             }
         }
         catch (Exception $e)
@@ -204,8 +204,8 @@ function reply()
     {
         $buf = parse_url($_SERVER['REQUEST_URI']);
 
-        foreach ($buf as $a => $b)
-            echo "<div>".$a." => ".$b."</div>";
+//        foreach ($buf as $a => $b)
+//            echo "<div>".$a." => ".$b."</div>";
 
         try
         {
