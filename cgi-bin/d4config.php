@@ -96,7 +96,7 @@ function read_sysconf()
     }
     else
     {
-        echo "<form action=\"d4config.php?update\" method=\"post\" enctype=\"multipart/form-data\">";
+        echo "<form action=\"d4config?update\" method=\"post\" enctype=\"multipart/form-data\">";
         echo "<table class=\"normal\">";
 
         echo "<tr class=\"normal\">";
@@ -152,7 +152,7 @@ function read_userconf()
     }
     else
     {
-        echo "<form action=\"d4config.php?reset\" method=\"post\" enctype=\"multipart/form-data\">";
+        echo "<form action=\"d4config?reset\" method=\"post\" enctype=\"multipart/form-data\">";
         echo "<table class=\"normal\">";
 
         echo "<tr class=\"normal\">";
@@ -197,13 +197,18 @@ function reply()
     default_head("4D Config");
     
     echo "<body>";
-    default_navigator();
+
+    if ($_SERVER['REMOTE_ADDR'] == '192.168.0.205')
+        default_navigator();
+
     echo "<div class=\"content\">";
 
     if (!empty($_POST))
     {
         $buf = parse_url($_SERVER['REQUEST_URI']);
 
+//        foreach ($_SERVER as $a => $b)
+//            echo "<div>".$a.' '.$b."</div>";
 //        foreach ($buf as $a => $b)
 //            echo "<div>".$a." => ".$b."</div>";
 
