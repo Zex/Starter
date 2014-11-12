@@ -12,6 +12,7 @@
  *
  * Sample usage: sqlite3 ConfLite < init_db.sql
  */
+
 begin transaction;
 
 create table SysConf (
@@ -25,7 +26,7 @@ create table SysConf (
 
                             /* Key,                 DefVal,  Step,   Upper,   Lower,  Unit */
 insert into SysConf values ("Prepare.SwingAngle",   "70.0",  "10.0", "70.0",  "20.0", "");
-insert into SysConf values ("Prepare.MovingLength", "11.0",  "1.0",  "7.0",   "99.0", "cm");
+insert into SysConf values ("Prepare.Distance",     "11.0",  "1.0",  "99.0",  "7.0", "cm");
 insert into SysConf values ("Prepare.QualityIndex", "2.0",   "1.0",  "2.0",   "1.0",  "");
 insert into SysConf values ("View.Vision",          "0.0",   "1.0",  "2.0",   "1.0",  "");
 insert into SysConf values ("View.QRotate",         "0.0",   "90.0", "270.0", "0.0",  "");
@@ -36,7 +37,12 @@ insert into SysConf values ("View.Chroma",          "2.0",   "1.0",  "7.0",   "0
 insert into SysConf values ("View.Graymap",         "6.0",   "1.0",  "6.0",   "0.0",  "");
 insert into SysConf values ("View.Zoom",            "1.0",   "0.4",  "2.2",   "0.6",  "");
 insert into SysConf values ("View.Render",          "3.0",   "1.0",  "4.0",   "0.0",  "");
+insert into SysConf values ("View.Threshold",       "50.0",  "5.0",  "100.0", "10.0", "");
 insert into SysConf values ("Slice.Shift",          "0.0",   "0.1",  "1.0",   "0.0",  "");
+insert into SysConf values ("Debug.Density",        "1.0",   "0.1",  "1.0",   "0.0",  "");
+insert into SysConf values ("Debug.Brightness",     "2.25",  "0.1",  "5.0",   "0.0",  "");
+insert into SysConf values ("Debug.Contrast",       "0.0",   "0.1",  "3.0",   "0.0",  "");
+insert into SysConf values ("Debug.Smooth",         "3.0",   "1.0",  "4.0",   "0.0",  "");
 
 create table UserConf (
     Key text primary key not null,
@@ -55,7 +61,7 @@ commit;
                             /* Key,                  Value,   ValueType */
 /*
 insert into UserConf values ("Prepare.SwingAngle",   "60.0",  0);
-insert into UserConf values ("Prepare.MovingLength", "11.0",  0);
+insert into UserConf values ("Prepare.Distance", "11.0",  0);
 insert into UserConf values ("Prepare.QualityIndex", "2.0",   0);
 insert into UserConf values ("View.Vision",          "0.0",   0);
 insert into UserConf values ("View.QRotate",         "0.0",   0);
