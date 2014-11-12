@@ -5,13 +5,15 @@
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride None
+        allow from all
 	</Directory>
-	<Directory /home/ag/lab/Starter/>
-		Options Indexes FollowSymLinks MultiViews
-		AllowOverride None
-		Order allow,deny
-		allow from all
-	</Directory>
+
+#	<Directory /home/ag/lab/Starter/>
+#		Options Indexes FollowSymLinks MultiViews
+#		AllowOverride None
+#		Order allow,deny
+#		allow from all
+#	</Directory>
 
     alias /css/ /home/ag/lab/Starter/css/
 	<Directory /home/ag/lab/Starter/css>
@@ -62,6 +64,22 @@
 
 	ScriptAlias /d4config /home/ag/lab/Starter/cgi-bin/d4config.php
 	<Directory "/home/ag/lab/Starter/cgi-bin/d4config.php">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	ScriptAlias /starter /home/ag/lab/Starter/cgi-bin/starter.py
+	<Directory "/home/ag/lab/Starter/cgi-bin/starter.py">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	ScriptAlias / /home/ag/lab/Starter/index.php
+	<Directory "/home/ag/lab/Starter/index.php">
 		AllowOverride None
 		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
 		Order allow,deny
