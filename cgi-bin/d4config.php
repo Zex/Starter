@@ -22,6 +22,8 @@ function update_configure()
     }
     else
     {
+        try
+        {
             foreach ($_POST as $k => $v)
             {
                 $item = ltrim(strrchr($k,'_'), '_');
@@ -29,12 +31,44 @@ function update_configure()
                 $sql = "update ".$SYSCONFTABLE." set ".$item."=\"".$v."\" where Key == \"".str_replace('_', '.', $key)."\";";
 
                 if (!($ret = $conn->query($sql)))
-                    echo "<div>".$conn->lastErrorMsg()."</div>";
+                    throw new Exception($conn->lastErrorMsg());
                 
                 else
                     echo "<div><span>"."Configure updated !"."</span></div>";
             }
+        }
+        catch (Exception $e)
+        {
+            echo "<div>".$conn->lastErrorMsg()."</div>";
+        }
+        
+     }
+    
+     $conn->close();
+}
 
+function reset_user()
+{
+    global $CONFDB;
+    global $SYSCONFTABLE;
+    global $USERCONFTABLE;
+
+    if (!($conn = new SQLite3($CONFDB)))
+    {
+        echo $conn->lastErrorMsg();
+    }
+    else
+    {
+        $sql = "update ".$USERCONFTABLE;
+        $sql .= " set Value = (select ".$SYSCONFTABLE.".DefaultValue from ".$SYSCONFTABLE;
+        $sql .= " where ".$USERCONFTABLE.".Key=".$SYSCONFTABLE.".Key)";
+        $sql .= " where exists (select * from ".$SYSCONFTABLE." where ".$USERCONFTABLE.".Key=".$SYSCONFTABLE.".Key);";
+
+        if (!($ret = $conn->query($sql)))
+           echo "<div>".$conn->lastErrorMsg()."</div>";
+            
+        else
+           echo "<div><span>"."Configure reseted !"."</span></div>";
      }
     
      $conn->close();
@@ -62,7 +96,7 @@ function read_sysconf()
     }
     else
     {
-        echo "<form action=\"d4config.php?u=1\" method=\"post\" enctype=\"multipart/form-data\">";
+        echo "<form action=\"d4config.php?update\" method=\"post\" enctype=\"multipart/form-data\">";
         echo "<table class=\"normal\">";
 
         echo "<tr class=\"normal\">";
@@ -118,6 +152,7 @@ function read_userconf()
     }
     else
     {
+        echo "<form action=\"d4config.php?reset\" method=\"post\" enctype=\"multipart/form-data\">";
         echo "<table class=\"normal\">";
 
         echo "<tr class=\"normal\">";
@@ -135,7 +170,7 @@ function read_userconf()
                 if ($t == 'Key') continue;
 
                 echo "<td class=\"normal\">";
-                echo "<input name=\"".$row['Key'].'.'.$t."\" type=\"text\" value=\"".$row[$t]."\"/>";
+                echo "<input name=\"".$row['Key'].'.'.$t."\" type=\"text\" value=\"".$row[$t]."\" readonly=\"true\"/>";
                 echo "</td>";
             }
 
@@ -143,6 +178,8 @@ function read_userconf()
         }
 
         echo "</table>";
+        echo "<input type=\"submit\" value=\""."Reset"."\"/>";
+        echo "</form>";
 
     }
     
@@ -163,8 +200,25 @@ function reply()
     default_navigator();
     echo "<div class=\"content\">";
 
-    if (!empty($_POST) && $_POST["u"] == 1)
-        update_configure();
+    if (!empty($_POST))
+    {
+        $buf = parse_url($_SERVER['REQUEST_URI']);
+
+        foreach ($buf as $a => $b)
+            echo "<div>".$a." => ".$b."</div>";
+
+        try
+        {
+            if ($buf['query'] == 'update')
+                update_configure();
+    
+            else if ($buf['query'] == 'reset')
+                reset_user();
+        }
+        catch (Exception $e)
+        {
+        }
+    }
 
     echo "<h1>"."Configure for 3D/4D"."</h1>";
 
