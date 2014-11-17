@@ -125,6 +125,20 @@ function read_sysconf()
         echo "<input type=\"submit\" value=\""."Submit"."\"/>";
         echo "</form>";
 
+        echo "<form action=\"d4config?additem\" method=\"post\" enctype=\"multipart/form-data\">";
+        echo "<table class=\"normal\">";
+
+        echo "<tr class=\"normal\">";
+        foreach ($titles as $t)
+        {
+            echo "<td class=\"normal\">";
+            echo "<input name=\"".$t."\" type=\"text\"/>";
+            echo "</td>";
+        }
+
+        echo "</table>";
+        echo "<input type=\"submit\" value=\""."New Item"."\"/>";
+        echo "</form>";
     }
 
     $conn->close();
