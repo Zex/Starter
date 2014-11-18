@@ -222,13 +222,17 @@ function add_item()
             $sql .= "\"".$_POST["Lower"]."\",";
             $sql .= "\"".$_POST["Unit"]."\");";
 
-//              echo "<div><span>".$sql."</span>"."</div>"; $conn->close();return;
 
             if (!($ret = $conn->query($sql)))
                 throw new Exception($conn->lastErrorMsg());
-            
-//          else
-//              echo "<div><span>"."Configure updated !"."</span></div>";
+
+            $sql = "insert into ".$USERCONFTABLE." (Key, Value, ValueType)";
+            $sql .= " select Key, DefaultValue, 0 from ".$SYSCONFTABLE." where Key=\"".$_POST["Key"]."\";";
+             
+//            echo "<div><span>".$sql."</span>"."</div>"; $conn->close();return;
+
+            if (!($ret = $conn->query($sql)))
+                throw new Exception($conn->lastErrorMsg());
         }
         catch (Exception $e)
         {
