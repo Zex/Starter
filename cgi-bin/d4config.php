@@ -200,6 +200,46 @@ function read_userconf()
     $conn->close();
 }
 
+function add_item()
+{
+    global $CONFDB;
+    global $SYSCONFTABLE;
+    global $USERCONFTABLE;
+
+    if (!($conn = new SQLite3($CONFDB)))
+    {
+        echo $conn->lastErrorMsg();
+    }
+    else
+    {
+        try
+        {
+            $sql = "insert into ".$SYSCONFTABLE." values (";
+            $sql .= "\"".$_POST["Key"]."\",";
+            $sql .= "\"".$_POST["DefaultValue"]."\",";
+            $sql .= "\"".$_POST["Step"]."\",";
+            $sql .= "\"".$_POST["Upper"]."\",";
+            $sql .= "\"".$_POST["Lower"]."\",";
+            $sql .= "\"".$_POST["Unit"]."\");";
+
+//              echo "<div><span>".$sql."</span>"."</div>"; $conn->close();return;
+
+            if (!($ret = $conn->query($sql)))
+                throw new Exception($conn->lastErrorMsg());
+            
+//          else
+//              echo "<div><span>"."Configure updated !"."</span></div>";
+        }
+        catch (Exception $e)
+        {
+            echo "<div>".$conn->lastErrorMsg()."</div>";
+        }
+        
+     }
+    
+     $conn->close();
+}
+
 function reply()
 {
 
@@ -233,6 +273,8 @@ function reply()
     
             else if ($buf['query'] == 'reset')
                 reset_user();
+            else if ($buf['query'] == 'additem')
+                add_item();
         }
         catch (Exception $e)
         {
