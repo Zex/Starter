@@ -47,7 +47,7 @@ function update_configure()
 
     if (!($conn = new SQLite3($CONFDB)))
     {
-        echo $conn->lastErrorMsg();
+        throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
     }
     else
     {
@@ -111,7 +111,7 @@ function read_sysconf()
    
 
     if (!($conn = new SQLite3($CONFDB)))
-        echo $conn->lastErrorMsg();
+        throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
 
     $titles = ["Key", "DefaultValue", "Step", "Upper", "Lower", "Unit"]; 
 
@@ -143,7 +143,7 @@ function read_sysconf()
                 if ($t == 'Key') continue;
 
                 echo "<td class=\"normal\">";
-                echo "<input name=\"".$row['Key'].".".$t."\" type=\"text\" value=\"".$row[$t]."\"/>";
+                echo "<input style=\"width:98%\" name=\"".$row['Key'].".".$t."\" type=\"text\" value=\"".$row[$t]."\"/>";
                 echo "</td>";
             }
 
@@ -191,7 +191,7 @@ function read_userconf()
 
     if (!($ret = $conn->query($sql)))
     {
-        echo $conn->lastErrorMsg();
+        throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
     }
     else
     {
@@ -206,14 +206,19 @@ function read_userconf()
         while ($row = $ret->fetchArray(SQLITE3_ASSOC))
         {
             echo "<tr class=\"normal\">";
-            echo "<td class=\"normal\">"."<span>".$row['Key']."</span>"."</td>";
+//          echo "<td class=\"normal\">"."<span>".$row['Key']."</span>"."</td>";
+            echo "<form action=\"d4config?dui=".$row['Key']."\" method=\"post\" enctype=\"multipart/form-data\">";
+            echo "<td class=\"normal\" width=\"80%\">";
+            echo "<input type=\"submit\" name=\"".$row['Key']."\" value=\""."Delete"."\"/>";
+            echo "<span>".$row['Key']."</span>"."</td>";
+            echo "</form>";
 
             foreach ($titles as $t)
             {
                 if ($t == 'Key') continue;
 
-                echo "<td class=\"normal\">";
-                echo "<input name=\"".$row['Key'].'.'.$t."\" type=\"text\" value=\"".$row[$t]."\" readonly=\"true\"/>";
+                echo "<td class=\"normal\" width=\"10%\">";
+                echo "<input style=\"width:98%\" name=\"".$row['Key'].'.'.$t."\" type=\"text\" value=\"".$row[$t]."\" readonly=\"true\"/>";
                 echo "</td>";
             }
 
@@ -224,7 +229,7 @@ function read_userconf()
         echo "<input type=\"submit\" value=\""."Reset"."\"/>";
         echo "</form>";
 
-        echo "<form action=\"d4config?adduseritem\" method=\"post\" enctype=\"multipart/form-data\">";
+        echo "<form action=\"d4config?aui\" method=\"post\" enctype=\"multipart/form-data\">";
         echo "<table class=\"normal\">";
 
         echo "<tr class=\"normal\">";
@@ -251,7 +256,7 @@ function add_item()
 
     if (!($conn = new SQLite3($CONFDB)))
     {
-        echo $conn->lastErrorMsg();
+        throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
     }
     else
     {
@@ -262,6 +267,10 @@ function add_item()
 
             foreach ($req_keys as $k)
             {
+                $_POST[$k] = str_replace('"', "", $_POST[$k]);
+                $_POST[$k] = str_replace(';', "", $_POST[$k]);
+                $_POST[$k] = str_replace(' ', "", $_POST[$k]);
+
                 if (empty($_POST[$k]))
                     throw new Exception("Empty key found", 1);
                 $sql .= "\"".$_POST[$k]."\",";
@@ -298,7 +307,7 @@ function add_user_item()
 
     if (!($conn = new SQLite3($CONFDB)))
     {
-        echo $conn->lastErrorMsg();
+        throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
     }
     else
     {
@@ -310,6 +319,10 @@ function add_user_item()
 
             foreach ($req_keys as $k)
             {
+                $_POST[$k] = str_replace('"', "", $_POST[$k]);
+                $_POST[$k] = str_replace(';', "", $_POST[$k]);
+                $_POST[$k] = str_replace(' ', "", $_POST[$k]);
+
                 if (empty($_POST[$k]))
                     throw new Exception("Empty key found", 1);
                 $sql .= "\"".$_POST[$k]."\",";
@@ -321,10 +334,35 @@ function add_user_item()
 
             if (!($ret = $conn->query($sql)))
                 throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
+        }
+        catch (Exception $e)
+        {
+            echo "<div>".$e->getCode()." => ".$e->getMessage()."</div>";
+        }
+        
+     }
+    
+     $conn->close();
+}
 
-            $sql = "insert into ".$USERCONFTABLE." (Key, Value, ValueType)";
-            $sql .= " select Key, DefaultValue, 0 from ".$SYSCONFTABLE." where Key=\"".$_POST["Key"]."\";";
-             
+function del_user_item($key)
+{
+    global $CONFDB;
+    global $SYSCONFTABLE;
+    global $USERCONFTABLE;
+
+    if (!($conn = new SQLite3($CONFDB)))
+    {
+        throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
+    }
+    else
+    {
+        try
+        {
+            if (empty($key))
+                throw new Exception("Empty key found", 1);
+
+            $sql = "delete from ".$USERCONFTABLE." where Key=\"".$key."\";";
 
             if (!($ret = $conn->query($sql)))
                 throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
@@ -333,7 +371,6 @@ function add_user_item()
         {
             echo "<div>".$e->getCode()." => ".$e->getMessage()."</div>";
         }
-        
      }
     
      $conn->close();
@@ -367,15 +404,22 @@ function reply()
 
         try
         {
-            if ($buf['query'] == 'update')
-                update_configure();
-    
-            else if ($buf['query'] == 'reset')
-                reset_user();
-            else if ($buf['query'] == 'additem')
-                add_item();
-            else if ($buf['query'] == 'adduseritem')
-                add_user_item();
+            $a = [];
+            parse_str($buf['query'],$a);
+
+            foreach ($a as $k => $v)
+            {
+                if ($k == 'update')
+                    update_configure();
+                else if ($k == 'reset')
+                    reset_user();
+                else if ($k == 'additem')
+                    add_item();
+                else if ($k == 'aui')
+                    add_user_item();
+                else if ($k == 'dui')
+                    del_user_item($v);
+            }
         }
         catch (Exception $e)
         {
@@ -402,8 +446,7 @@ try
 }
 catch (Exception $e)
 {
-    //die ('d4config Error: ' . $e->getMessage());
-    echo "<div>".$e->getCode()." => ".$e->getMessage()."</div>";
+    die ("d4config Error: ".$e->getCode()." => ".$e->getMessage());
 }
 
 ?>
