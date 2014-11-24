@@ -10,6 +10,35 @@ $CONFDB = "/home/ag/lab/Starter/dbs/config.db";
 $SYSCONFTABLE = "SysConf";
 $USERCONFTABLE = "UserConf";
 
+//#define SQLITE_ERROR        1   /* SQL error or missing database */
+//#define SQLITE_INTERNAL     2   /* Internal logic error in SQLite */
+//#define SQLITE_PERM         3   /* Access permission denied */
+//#define SQLITE_ABORT        4   /* Callback routine requested an abort */
+//#define SQLITE_BUSY         5   /* The database file is locked */
+//#define SQLITE_LOCKED       6   /* A table in the database is locked */
+//#define SQLITE_NOMEM        7   /* A malloc() failed */
+//#define SQLITE_READONLY     8   /* Attempt to write a readonly database */
+//#define SQLITE_INTERRUPT    9   /* Operation terminated by sqlite3_interrupt()*/
+//#define SQLITE_IOERR       10   /* Some kind of disk I/O error occurred */
+//#define SQLITE_CORRUPT     11   /* The database disk image is malformed */
+//#define SQLITE_NOTFOUND    12   /* Unknown opcode in sqlite3_file_control() */
+//#define SQLITE_FULL        13   /* Insertion failed because database is full */
+//#define SQLITE_CANTOPEN    14   /* Unable to open the database file */
+//#define SQLITE_PROTOCOL    15   /* Database lock protocol error */
+//#define SQLITE_EMPTY       16   /* Database is empty */
+//#define SQLITE_SCHEMA      17   /* The database schema changed */
+//#define SQLITE_TOOBIG      18   /* String or BLOB exceeds size limit */
+//#define SQLITE_CONSTRAINT  19   /* Abort due to constraint violation */
+//#define SQLITE_MISMATCH    20   /* Data type mismatch */
+//#define SQLITE_MISUSE      21   /* Library used incorrectly */
+//#define SQLITE_NOLFS       22   /* Uses OS features not supported on host */
+//#define SQLITE_AUTH        23   /* Authorization denied */
+//#define SQLITE_FORMAT      24   /* Auxiliary database format error */
+//#define SQLITE_RANGE       25   /* 2nd parameter to sqlite3_bind out of range */
+//#define SQLITE_NOTADB      26   /* File opened that is not a database file */
+//#define SQLITE_ROW         100  /* sqlite3_step() has another row ready */
+//#define SQLITE_DONE        101  /* sqlite3_step() has finished executing */
+
 function update_configure()
 {
     global $CONFDB;
@@ -39,7 +68,7 @@ function update_configure()
         }
         catch (Exception $e)
         {
-            echo "<div>".$conn->lastErrorMsg()."</div>";
+            echo "<div>".$e->getCode()." => ".$e->getMessage()."</div>";
         }
         
      }
@@ -154,7 +183,7 @@ function read_userconf()
     if (!($conn = new SQLite3($CONFDB)))
         echo $conn->lastErrorMsg();
 
-    $titles = ["Key", "Value"];
+    $titles = ["Key", "Value", "ValueType"];
 
     $sql = "select ".join(",", $titles);
     $sql.rtrim(",");
@@ -195,6 +224,20 @@ function read_userconf()
         echo "<input type=\"submit\" value=\""."Reset"."\"/>";
         echo "</form>";
 
+        echo "<form action=\"d4config?adduseritem\" method=\"post\" enctype=\"multipart/form-data\">";
+        echo "<table class=\"normal\">";
+
+        echo "<tr class=\"normal\">";
+        foreach ($titles as $t)
+        {
+            echo "<td class=\"normal\">";
+            echo "<input name=\"".$t."\" type=\"text\"/>";
+            echo "</td>";
+        }
+
+        echo "</table>";
+        echo "<input type=\"submit\" value=\""."New Item"."\"/>";
+        echo "</form>";
     }
     
     $conn->close();
@@ -214,17 +257,20 @@ function add_item()
     {
         try
         {
+            $req_keys = ["Key", "DefaultValue", "Step", "Upper", "Lower"];
             $sql = "insert into ".$SYSCONFTABLE." values (";
-            $sql .= "\"".$_POST["Key"]."\",";
-            $sql .= "\"".$_POST["DefaultValue"]."\",";
-            $sql .= "\"".$_POST["Step"]."\",";
-            $sql .= "\"".$_POST["Upper"]."\",";
-            $sql .= "\"".$_POST["Lower"]."\",";
+
+            foreach ($req_keys as $k)
+            {
+                if (empty($_POST[$k]))
+                    throw new Exception("Empty key found", 1);
+                $sql .= "\"".$_POST[$k]."\",";
+            }
+
             $sql .= "\"".$_POST["Unit"]."\");";
 
-
             if (!($ret = $conn->query($sql)))
-                throw new Exception($conn->lastErrorMsg());
+                throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
 
             $sql = "insert into ".$USERCONFTABLE." (Key, Value, ValueType)";
             $sql .= " select Key, DefaultValue, 0 from ".$SYSCONFTABLE." where Key=\"".$_POST["Key"]."\";";
@@ -232,11 +278,60 @@ function add_item()
 //            echo "<div><span>".$sql."</span>"."</div>"; $conn->close();return;
 
             if (!($ret = $conn->query($sql)))
-                throw new Exception($conn->lastErrorMsg());
+                throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
         }
         catch (Exception $e)
         {
-            echo "<div>".$conn->lastErrorMsg()."</div>";
+            echo "<div>".$e->getCode()." => ".$e->getMessage()."</div>";
+        }
+        
+     }
+    
+     $conn->close();
+}
+
+function add_user_item()
+{
+    global $CONFDB;
+    global $SYSCONFTABLE;
+    global $USERCONFTABLE;
+
+    if (!($conn = new SQLite3($CONFDB)))
+    {
+        echo $conn->lastErrorMsg();
+    }
+    else
+    {
+        try
+        {
+            $req_keys = ["Key", "Value"];
+
+            $sql = "insert into ".$USERCONFTABLE." values (";
+
+            foreach ($req_keys as $k)
+            {
+                if (empty($_POST[$k]))
+                    throw new Exception("Empty key found", 1);
+                $sql .= "\"".$_POST[$k]."\",";
+            }
+
+            $sql .= "\"".$_POST["ValueType"]."\");";
+
+//            echo "<div><span>".$sql."</span>"."</div>"; $conn->close();return;
+
+            if (!($ret = $conn->query($sql)))
+                throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
+
+            $sql = "insert into ".$USERCONFTABLE." (Key, Value, ValueType)";
+            $sql .= " select Key, DefaultValue, 0 from ".$SYSCONFTABLE." where Key=\"".$_POST["Key"]."\";";
+             
+
+            if (!($ret = $conn->query($sql)))
+                throw new Exception($conn->lastErrorMsg(), $conn->lastErrorCode());
+        }
+        catch (Exception $e)
+        {
+            echo "<div>".$e->getCode()." => ".$e->getMessage()."</div>";
         }
         
      }
@@ -279,9 +374,12 @@ function reply()
                 reset_user();
             else if ($buf['query'] == 'additem')
                 add_item();
+            else if ($buf['query'] == 'adduseritem')
+                add_user_item();
         }
         catch (Exception $e)
         {
+            echo "<div>".$e->getCode()." => ".$e->getMessage()."</div>";
         }
     }
 
@@ -304,7 +402,8 @@ try
 }
 catch (Exception $e)
 {
-    die ('d4config Error: ' . $e->getMessage());
+    //die ('d4config Error: ' . $e->getMessage());
+    echo "<div>".$e->getCode()." => ".$e->getMessage()."</div>";
 }
 
 ?>
