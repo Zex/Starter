@@ -206,9 +206,8 @@ function read_userconf()
         while ($row = $ret->fetchArray(SQLITE3_ASSOC))
         {
             echo "<tr class=\"normal\">";
-//          echo "<td class=\"normal\">"."<span>".$row['Key']."</span>"."</td>";
             echo "<form action=\"d4config?dui=".$row['Key']."\" method=\"post\" enctype=\"multipart/form-data\">";
-            echo "<td class=\"normal\" width=\"80%\">";
+            echo "<td class=\"normal\" width=\"70%\">";
             echo "<input type=\"submit\" name=\"".$row['Key']."\" value=\""."Delete"."\"/>";
             echo "<span>".$row['Key']."</span>"."</td>";
             echo "</form>";
@@ -217,7 +216,7 @@ function read_userconf()
             {
                 if ($t == 'Key') continue;
 
-                echo "<td class=\"normal\" width=\"10%\">";
+                echo "<td class=\"normal\" width=\"15%\">";
                 echo "<input style=\"width:98%\" name=\"".$row['Key'].'.'.$t."\" type=\"text\" value=\"".$row[$t]."\" readonly=\"true\"/>";
                 echo "</td>";
             }
