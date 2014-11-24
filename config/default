@@ -70,6 +70,14 @@
 		Allow from all
 	</Directory>
 
+	ScriptAlias /starter.py /home/ag/lab/Starter/cgi-bin/starter.py
+	<Directory "/home/ag/lab/Starter/cgi-bin/starter.py">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+
 	ScriptAlias /starter /home/ag/lab/Starter/cgi-bin/starter.py
 	<Directory "/home/ag/lab/Starter/cgi-bin/starter.py">
 		AllowOverride None
@@ -78,7 +86,7 @@
 		Allow from all
 	</Directory>
 
-	ScriptAlias / /home/ag/lab/Starter/index.php
+	ScriptAlias /index /home/ag/lab/Starter/index.php
 	<Directory "/home/ag/lab/Starter/index.php">
 		AllowOverride None
 		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
