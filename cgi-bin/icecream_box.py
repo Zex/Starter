@@ -1,4 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+#
+# cgi-bin/icecream_box.py
+#
+# Author: zex <top_zlynch@yahoo.com>
 
 from navi import *
 import cgi
