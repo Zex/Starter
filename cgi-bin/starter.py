@@ -9,6 +9,10 @@ import cgi
 
 fields = cgi.FieldStorage()
 
+"""
+TODO: restful comp
+"""
+
 def starter():
 
     import time
