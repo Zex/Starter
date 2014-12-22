@@ -99,6 +99,7 @@
     ErrorDocument 401 /default/Starter401.html
     ErrorDocument 403 /default/Starter403.html
     ErrorDocument 404 /default/Starter404.html
+    ErrorDocument 407 /default/Starter407.html
     ErrorDocument 500 /default/Starter500.html
 
 	# Possible values include: debug, info, notice, warn, error, crit,
