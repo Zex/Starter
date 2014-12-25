@@ -4,8 +4,8 @@
 #
 
 RESPONSE_DIR = 'response'
-USERNAME = 'snooze'
-PASSWORD = 'sneezy'
+USERNAME = 'guest'
+PASSWORD = 'guest'
 HOST = '127.0.0.1'
-PORT = '7312'
+PORT = '80'#'5000'
 URL = 'http://' + HOST + ':' + PORT
