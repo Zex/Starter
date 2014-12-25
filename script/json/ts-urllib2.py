@@ -41,8 +41,8 @@ def case():
     req.get_method = lambda:'GET'
     rsp = urllib2.urlopen(req)
 
-    with open(RESPONSE_DIR+'/rsp_'+url.replace('/','.')+'.json', 'w') as fd:
-        fd.write(rsp.read() + '\n')
+    with open(RESPONSE_DIR+'/rsp_'+url.replace('/','-').replace(':', '_') +'.json', 'w') as fd:
+        fd.write('#' + url + '\n' + str(rsp.headers) + '\n' + rsp.read() + '\n')
 
 try:
     case()
