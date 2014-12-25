@@ -29,7 +29,8 @@ def case():
     conn.request('GET', url, body=json.dumps(data), headers=headers)
     rsp = conn.getresponse()
 
-    with open(RESPONSE_DIR+'/rsp_'+url.replace('/','.')+'.json', 'w') as fd:
+    with open(RESPONSE_DIR+'/rsp_'+url.replace('/','-').replace(':', '_') +'.json', 'w') as fd:
+        fd.write('#' + url + '\n')
         fd.write(str(rsp.msg) + '\n')
         fd.write(str(rsp.read()) + '\n')
 
@@ -37,7 +38,8 @@ def case():
     conn.request('GET', url, body=json.dumps(data), headers=headers)
     rsp = conn.getresponse()
     
-    with open(RESPONSE_DIR+'/rsp_'+url.replace('/','.')+'.json', 'w') as fd:
+    with open(RESPONSE_DIR+'/rsp_'+url.replace('/','-').replace(':', '_') +'.json', 'w') as fd:
+        fd.write('#' + url + '\n')
         fd.write(str(rsp.msg) + '\n')
         fd.write(str(rsp.read()) + '\n')
 
