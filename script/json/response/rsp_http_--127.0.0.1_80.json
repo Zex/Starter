@@ -1,0 +1,840 @@
+#http://127.0.0.1:80
+{'status': '500', 'server': 'PasteWSGIServer/0.5 Python/2.7.6', 'connection': 'close', 'x-debug-url': 'http://127.0.0.1/_debug/view/1419490889', 'date': 'Thu, 25 Dec 2014 07:01:29 GMT', 'content-type': 'text/html'}
+#http://127.0.0.1:80
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+ <title>Server Error</title>
+
+<script type="text/javascript">
+  debug_base = 'http://127.0.0.1/_debug';
+  debug_count = 1419490889;
+</script>
+
+<!-- CSS Imports -->
+<link rel="stylesheet" href="http://127.0.0.1/_debug/media/traceback.css" type="text/css" media="screen" />
+<!-- Pygments highlighting -->
+<style type="text/css">
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+
+<link rel="stylesheet" href="http://127.0.0.1/_debug/media/pylons/style/itraceback.css" type="text/css" media="screen" />
+
+</head>
+
+<body id="documentation" onload="switch_display('traceback_data')">
+<!-- We are only using a table to ensure old browsers see the message correctly -->
+
+<noscript>
+<div style="border-bottom: 1px solid #808080">
+<div style="border-bottom: 1px solid #404040">
+<table width="100%" border="0" cellpadding="0" bgcolor="#FFFFE1"><tr><td>&nbsp;</td><td><span style="padding: 0px; margin: 0px; font-family: Tahoma, sans-serif; font-size: 11px">Warning, your browser does not support JavaScript so you will not be able to use the interactive debugging on this page.</span></td></tr></table>
+</div>
+</div>
+</noscript>
+
+    <!-- Top anchor -->
+    <a name="top"></a>
+
+    <!-- Main Content -->
+    <div id="nav-bar">
+
+        <!-- Section Navigation -->
+        <h4 class="invisible">Section Links</h4>
+
+            <ul id="navlist">
+               <!--   -->
+               <li id="source_data_tab"><a href="#source_data" onclick="javascript:return switch_display('source_data');" accesskey="4" id="source_data_link">Source</a></li>
+               <li id="template_data_tab"><a href="#template_data" onclick="javascript:return switch_display('template_data');" accesskey="3" id="template_data_link">Template</a></li>
+               <li id="extra_data_tab"><a href="#extra_data" onclick="javascript:return switch_display('extra_data');" id="extra_data_link" accesskey="2" >Extra Data</a></li>
+               <li id="traceback_data_tab" class="active"><a href="#traceback_data" onclick="javascript:return switch_display('traceback_data');" id="traceback_data_link" class="active" accesskey="1">Traceback</a></li>
+            </ul>
+    </div>
+    <div id="main-content">
+        <div class="hr"><hr class="hr" /></div>
+        <div class="content-padding">
+            <div id="source_data" class="hidden-data">
+              There is no source code to display. Click a 'view' link in the <a href="#traceback_data" onclick="javascript:switch_display('traceback_data')" id="traceback_data_link" class="active" accesskey="1">Traceback</a> tab to load source code.
+            </div>
+            <div id="extra_data" class="hidden-data">
+                <h1 class="first"><a name="content"></a>Extra Data</h1>
+                <table class="variables">
+<tr class="header"><th colspan="2">CGI Variables</th></tr>
+<tr class="odd"><td>CONTENT_LENGTH</td>
+<td><tt>'42'</tt></td></tr>
+<tr class="even"><td>CONTENT_TYPE</td>
+<td><tt>'text/plain'</tt></td></tr>
+<tr class="odd"><td>HTTP_ACCEPT_ENCODING</td>
+<td><tt>'gzip, deflate'</tt></td></tr>
+<tr class="even"><td>HTTP_HOST</td>
+<td><tt>'127.0.0.1'</tt></td></tr>
+<tr class="odd"><td>HTTP_USER_AGENT</td>
+<td><tt>'Python-httplib2/0.8 (gzip)'</tt></td></tr>
+<tr class="even"><td>PATH_INFO</td>
+<td><tt>'/'</tt></td></tr>
+<tr class="odd"><td>REMOTE_ADDR</td>
+<td><tt>'127.0.0.1'</tt></td></tr>
+<tr class="even"><td>REQUEST_METHOD</td>
+<td><tt>'GET'</tt></td></tr>
+<tr class="odd"><td>SERVER_NAME</td>
+<td><tt>'127.0.0.1'</tt></td></tr>
+<tr class="even"><td>SERVER_PORT</td>
+<td><tt>'80'</tt></td></tr>
+<tr class="odd"><td>SERVER_PROTOCOL</td>
+<td><tt>'HTTP/1.1'</tt></td></tr>
+</table>
+                <h1 class="first"><a name="content"></a>Extra Data</h1>
+                <table class="variables">
+<tr class="header"><th colspan="2">WSGI Variables</th></tr>
+<tr class="odd"><td>application</td>
+<td><tt>&lt;function remover at 0x7f500b8e9050&gt;</tt></td></tr>
+<tr class="even"><td>beaker.cache</td>
+<td><tt>&lt;beaker.cache.CacheManager object at 0x7f5010f38590&gt;</tt></td></tr>
+<tr class="odd"><td>beaker.get_session</td>
+<td><tt>&lt;bound method SessionMiddleware._get_session of &lt;beaker.middleware.SessionMiddleware object at 0x7f5010f38510&gt;&gt;</tt></td></tr>
+<tr class="even"><td>beaker.session</td>
+<td><tt>{'_accessed_time': 1419490889.35527, '_creation_time': 1419490889.35527}</tt></td></tr>
+<tr class="odd"><td>paste.cookies</td>
+<td><tt>(&lt;SimpleCookie: &gt;, '')</tt></td></tr>
+<tr class="even"><td>paste.evalexception</td>
+<td><tt>&lt;weberror.evalexception.EvalException object at 0x7f500a36e650&gt;</tt></td></tr>
+<tr class="odd"><td>paste.evalexception.debug_count</td>
+<td><tt>1419490889</tt></td></tr>
+<tr class="even"><td>paste.httpserver.thread_pool</td>
+<td><tt>&lt;paste.httpserver.ThreadPool object at 0x7f500a36e950&gt;</tt></td></tr>
+<tr class="odd"><td>paste.registry</td>
+<td><tt>&lt;paste.registry.Registry object at 0x7f500a37c7d0&gt;</tt></td></tr>
+<tr class="even"><td>paste.throw_errors</td>
+<td><tt>True</tt></td></tr>
+<tr class="odd"><td>pylons.environ_config</td>
+<td><tt>{'session': 'beaker.session', 'cache': 'beaker.cache'}</tt></td></tr>
+<tr class="even"><td>pylons.log_debug</td>
+<td><tt>False</tt></td></tr>
+<tr class="odd"><td>pylons.pylons</td>
+<td><tt>&lt;pylons.util.PylonsContext object at 0x7f501033d0d0&gt;</tt></td></tr>
+<tr class="even"><td>pylons.routes_dict</td>
+<td><tt>{'url': u'', 'action': u'routes_placeholder', 'controller': u'root'}</tt></td></tr>
+<tr class="odd"><td>repoze.tm.active</td>
+<td><tt>True</tt></td></tr>
+<tr class="even"><td>repoze.who.logger</td>
+<td><tt>&lt;logging.Logger object at 0x7f501033d490&gt;</tt></td></tr>
+<tr class="odd"><td>repoze.who.plugins</td>
+<td><tt>{'form': &lt;FriendlyFormPlugin 139981767952144&gt;, 'main_identifier': &lt;FriendlyFormPlugin 139981767952144&gt;, 'authorization_md': &lt;repoze.what.middleware.AuthorizationMetadata object at 0x7f500b8dca10&gt;, 'cookie': &lt;AuthTktCookiePlugin 139981767867600&gt;, 'sqlauth': &lt;repoze.who.plugins.sa.SQLAlchemyAuthenticatorPlugin object at 0x7f500b8c7bd0&gt;, 'sql_user_md': &lt;repoze.who.plugins.sa.SQLAlchemyUserMDPlugin object at 0x7f500b8dc9d0&gt;}</tt></td></tr>
+<tr class="even"><td>routes.route</td>
+<td><tt>&lt;routes.route.Route object at 0x7f500c357d50&gt;</tt></td></tr>
+<tr class="odd"><td>routes.url</td>
+<td><tt>&lt;routes.util.URLGenerator object at 0x7f500a37ce50&gt;</tt></td></tr>
+<tr class="even"><td>toscawidgets.framework</td>
+<td><tt>&lt;tw.mods.base.HostFramework object at 0x7f500b91e310&gt;</tt></td></tr>
+<tr class="odd"><td>toscawidgets.prefix</td>
+<td><tt>'/toscawidgets'</tt></td></tr>
+<tr class="even"><td>weberror.evalexception</td>
+<td><tt>&lt;weberror.evalexception.EvalException object at 0x7f500a36e650&gt;</tt></td></tr>
+<tr class="odd"><td>wsgi process</td>
+<td><tt>'Multithreaded'</tt></td></tr>
+<tr class="even"><td>wsgiorg.routing_args</td>
+<td><tt>(&lt;routes.util.URLGenerator object at 0x7f500a37ce50&gt;, {'url': u'', 'action': u'routes_placeholder', 'controller': u'root'})</tt></td></tr>
+</table>
+            </div>
+            <div id="template_data" class="hidden-data">
+                <p>No Template information available.</p>
+            </div>
+            <div id="traceback_data">
+<div style="float: left; width: 100%; padding-bottom: 20px;">
+<h1 class="first"><a name="content"></a>WebError Traceback:</h1>
+<div class="main-exception-bar">
+  <span class="main-exception" style="color: #f00;">&#8669;</span>
+  <code class="main-exception">ImportError: cannot import name ClassManager</code>
+</div>
+<div id="formats">
+   <span class="title">View as: &nbsp;</span> <a id="view_short_html" class="active" href="#">Interactive</a> 
+   <a id="view_long_html" href="#">(full)</a> &nbsp;|&nbsp; <a id="view_short_text" href="#">Text</a>  
+   <a id="view_long_text" href="#">(full)</a> &nbsp;|&nbsp; <a id="view_short_xml" href="#">XML</a> 
+   <a id="view_long_xml" href="#">(full)</a>
+</div>  
+<div style="clear: both;">
+<div id="error-area" style="display: none; background-color: #600; color: #fff; border: 2px solid black">
+<button onclick="return clearError()">clear this</button>
+<div id="error-container"></div>
+<button onclick="return clearError()">clear this</button>
+</div>
+
+    <div id="short_traceback">
+    sys.path: <tt>[<br>
+&nbsp; &nbsp; '/usr/local/bin',<br>&nbsp; &nbsp; '/home/zex/lab/Starter/script/json/BlueEgg',<br>&nbsp; &nbsp; '/usr/lib/pymodules/python2.7',<br>&nbsp; &nbsp; '/usr/lib/python2.7/dist-packages',<br>&nbsp; &nbsp; '/usr/lib/python2.7',<br>&nbsp; &nbsp; '/usr/lib/python2.7/plat-x86_64-linux-gnu',<br>&nbsp; &nbsp; '/usr/lib/python2.7/lib-tk',<br>&nbsp; &nbsp; '/usr/lib/python2.7/lib-old',<br>&nbsp; &nbsp; '/usr/lib/python2.7/lib-dynload',<br>&nbsp; &nbsp; '/usr/local/lib/python2.7/dist-packages',<br>&nbsp; &nbsp; '/usr/lib/python2.7/dist-packages/PILcompat',<br>&nbsp; &nbsp; '/usr/lib/python2.7/dist-packages/gtk-2.0',<br>&nbsp; &nbsp; '/usr/lib/python2.7/dist-packages/ubuntu-sso-client']</tt><br>
+<div class="frame">
+Module <span class="module" title="/home/zex/lab/Starter/script/json/BlueEgg/blueegg/controllers/root.py">?</span>:<b>6</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699552" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:6" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">tg</span> <span class="kn">import</span> <span class="n">expose</span><span class="p">,</span> <span class="n">flash</span><span class="p">,</span> <span class="n">require</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">redirect</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">pylons.i18n</span> <span class="kn">import</span> <span class="n">ugettext</span> <span class="k">as</span> <span class="n">_</span><span class="p">,</span> <span class="n">lazy_ugettext</span> <span class="k">as</span> <span class="n">l_</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">catwalk.tg2</span> <span class="kn">import</span> <span class="n">Catwalk</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">repoze.what</span> <span class="kn">import</span> <span class="n">predicates</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">catwalk.tg2</span> <span class="kn">import</span> <span class="n">Catwalk</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/catwalk/tg2/__init__.py">?</span>:<b>1</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699480" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:1" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">controller</span> <span class="kn">import</span> <span class="n">Catwalk</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">controller</span> <span class="kn">import</span> <span class="n">Catwalk</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/catwalk/tg2/controller.py">?</span>:<b>13</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699408" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:13" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="n">Released</span> <span class="n">under</span> <span class="n">MIT</span> <span class="n">license</span><span class="o">.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="s">&quot;&quot;&quot;</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="s">from tgext.admin import AdminController</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="s">from tgext.admin.tgadminconfig import TGAdminConfig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="s">import warnings</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">tgext.admin</span> <span class="kn">import</span> <span class="n">AdminController</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/tgext/admin/__init__.py">?</span>:<b>1</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709642208" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:1" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">controller</span> <span class="kn">import</span> <span class="n">AdminController</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">AdminConfig</span><span class="p">,</span> <span class="n">CrudRestControllerConfig</span></span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">controller</span> <span class="kn">import</span> <span class="n">AdminController</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/tgext/admin/controller.py">?</span>:<b>12</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709642280" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:12" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">tgext.crud</span> <span class="kn">import</span> <span class="n">CrudRestController</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">AdminConfig</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">engine</span> <span class="o">=</span> <span class="s">&#39;genshi&#39;</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">AdminConfig</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/tgext/admin/config.py">?</span>:<b>12</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699336" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:12" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.dojo.formbase</span> <span class="kn">import</span> <span class="n">DojoAddRecordForm</span> <span class="k">as</span> <span class="n">AddRecordForm</span><span class="p">,</span> <span class="n">DojoEditableForm</span> <span class="k">as</span> <span class="n">EditableForm</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.tablebase</span> <span class="kn">import</span> <span class="n">TableBase</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.fillerbase</span> <span class="kn">import</span> <span class="n">TableFiller</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">AddRecordForm</span><span class="p">,</span> <span class="n">EditableForm</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">sprox.tablebase</span> <span class="kn">import</span> <span class="n">TableBase</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/sprox/tablebase.py">?</span>:<b>2</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699264" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:2" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">sprox.widgets</span> <span class="kn">import</span> <span class="n">SproxDataGrid</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">viewbase</span> <span class="kn">import</span> <span class="n">ViewBase</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">metadata</span> <span class="kn">import</span> <span class="n">FieldsMetadata</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">tw.api</span> <span class="kn">import</span> <span class="n">Widget</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">viewbase</span> <span class="kn">import</span> <span class="n">ViewBase</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/sprox/viewbase.py">?</span>:<b>4</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699192" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:4" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">tw.api</span> <span class="kn">import</span> <span class="n">Widget</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">tw.forms</span> <span class="kn">import</span> <span class="n">HiddenField</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">configbase</span> <span class="kn">import</span> <span class="n">ConfigBase</span><span class="p">,</span> <span class="n">ConfigBaseError</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">PropertyLoader</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">widgetselector</span> <span class="kn">import</span> <span class="n">WidgetSelector</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">configbase</span> <span class="kn">import</span> <span class="n">ConfigBase</span><span class="p">,</span> <span class="n">ConfigBaseError</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/sprox/configbase.py">?</span>:<b>3</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699120" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:3" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">Validator</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">tw.api</span> <span class="kn">import</span> <span class="n">Widget</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.providerselector</span> <span class="kn">import</span> <span class="n">ProviderTypeSelector</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">class</span> <span class="nc">ConfigBaseError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span><span class="k">pass</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">sprox.providerselector</span> <span class="kn">import</span> <span class="n">ProviderTypeSelector</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/sprox/providerselector.py">?</span>:<b>18</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699048" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:18" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">sqlalchemy.orm.session</span> <span class="kn">import</span> <span class="n">Session</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sqlalchemy.orm.scoping</span> <span class="kn">import</span> <span class="n">ScopedSession</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sqlalchemy.orm.attributes</span> <span class="kn">import</span> <span class="n">ClassManager</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.saormprovider</span> <span class="kn">import</span> <span class="n">SAORMProvider</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">sqlalchemy.orm.attributes</span> <span class="kn">import</span> <span class="n">ClassManager</span></div>
+</div>
+<b>ImportError: cannot import name ClassManager</b><br>
+    </div>
+    <div id="short_text_version" class="hidden-data">
+    <textarea style="width: 100%" rows=21 cols=60>File '/home/zex/lab/Starter/script/json/BlueEgg/blueegg/controllers/root.py', line 6 in &lt;module&gt;
+  from catwalk.tg2 import Catwalk
+File '/usr/lib/pymodules/python2.7/catwalk/tg2/__init__.py', line 1 in &lt;module&gt;
+  from controller import Catwalk
+File '/usr/lib/pymodules/python2.7/catwalk/tg2/controller.py', line 13 in &lt;module&gt;
+  from tgext.admin import AdminController
+File '/usr/lib/pymodules/python2.7/tgext/admin/__init__.py', line 1 in &lt;module&gt;
+  from controller import AdminController
+File '/usr/lib/pymodules/python2.7/tgext/admin/controller.py', line 12 in &lt;module&gt;
+  from config import AdminConfig
+File '/usr/lib/pymodules/python2.7/tgext/admin/config.py', line 12 in &lt;module&gt;
+  from sprox.tablebase import TableBase
+File '/usr/lib/pymodules/python2.7/sprox/tablebase.py', line 2 in &lt;module&gt;
+  from viewbase import ViewBase
+File '/usr/lib/pymodules/python2.7/sprox/viewbase.py', line 4 in &lt;module&gt;
+  from configbase import ConfigBase, ConfigBaseError
+File '/usr/lib/pymodules/python2.7/sprox/configbase.py', line 3 in &lt;module&gt;
+  from sprox.providerselector import ProviderTypeSelector
+File '/usr/lib/pymodules/python2.7/sprox/providerselector.py', line 18 in &lt;module&gt;
+  from sqlalchemy.orm.attributes import ClassManager
+ImportError: cannot import name ClassManager</textarea>
+    </div>
+    <div id="long_xml_version" class="hidden-data">
+    <textarea style="width: 100%" rows=50 cols=60>&lt;?xml version="1.0" ?&gt;&lt;traceback&gt;&lt;sysinfo&gt;&lt;language full_version="2.7.6 (default, Mar 22 2014, 22:59:56) 
+[GCC 4.8.2]" platform="linux2" version="2.7.6"&gt;Python&lt;/language&gt;&lt;libraries&gt;&lt;library name="repoze.lru" version="0.6"/&gt;&lt;library name="pastedeploy" version="1.5.2"/&gt;&lt;library name="tg.devtools" version="2.0.2"/&gt;&lt;library name="weberror" version="0.10.3"/&gt;&lt;library name="zope.interface" version="4.0.5"/&gt;&lt;library name="tempita" version="0.5.2"/&gt;&lt;library name="pygments" version="1.6"/&gt;&lt;library name="genshi" version="0.7"/&gt;&lt;library name="repoze.who.plugins.sa" version="1.0rc2"/&gt;&lt;library name="repoze.who" version="1.0.18"/&gt;&lt;library name="turbogears2" version="2.1.5"/&gt;&lt;library name="mako" version="0.9.1"/&gt;&lt;library name="formencode" version="1.2.6"/&gt;&lt;library name="babel" version="1.3"/&gt;&lt;library name="six" version="1.5.2"/&gt;&lt;library name="webtest" version="2.0.14"/&gt;&lt;library name="webob" version="1.3.1"/&gt;&lt;library name="repoze.what.plugins.sql" version="1.0rc1"/&gt;&lt;library name="sqlalchemy" version="0.8.4"/&gt;&lt;library name="pylons" version="1.0.1"/&gt;&lt;library name="simplejson" version="3.3.1"/&gt;&lt;library name="repoze.who-testutil" version="1.0rc1"/&gt;&lt;library name="markupsafe" version="0.18"/&gt;&lt;library name="sqlalchemy-migrate" version="0.8.2"/&gt;&lt;library name="beautifulsoup4" version="4.2.1"/&gt;&lt;library name="paste" version="1.7.5.1"/&gt;&lt;library name="decorator" version="3.4.0"/&gt;&lt;library name="beaker" version="1.6.3"/&gt;&lt;library name="repoze.what" version="1.0.9"/&gt;&lt;library name="repoze.what-quickstart" version="1.0"/&gt;&lt;library name="pbr" version="0.7.0"/&gt;&lt;library name="webhelpers" version="1.3"/&gt;&lt;library name="pytz" version="2012c"/&gt;&lt;library name="webflash" version="0.1a9"/&gt;&lt;library name="nose" version="1.3.1"/&gt;&lt;library name="routes" version="2.0"/&gt;&lt;library name="repoze.who-friendlyform" version="1.0b3"/&gt;&lt;library name="waitress" version="0.8.8"/&gt;&lt;library name="pastescript" version="1.7.5"/&gt;&lt;/libraries&gt;&lt;/sysinfo&gt;&lt;stack&gt;&lt;frame&gt;&lt;module&gt;weberror.evalexception&lt;/module&gt;&lt;filename&gt;/usr/lib/python2.7/dist-packages/weberror/evalexception.py&lt;/filename&gt;&lt;line&gt;431&lt;/line&gt;&lt;function&gt;respond&lt;/function&gt;&lt;operation&gt;app_iter = self.application(environ, detect_start_response)&lt;/operation&gt;&lt;operation_context&gt;        try:
+            __traceback_supplement__ = errormiddleware.Supplement, self, environ
+            app_iter = self.application(environ, detect_start_response)
+            
+            # Don't create a list from a paste.fileapp object 
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;tg.configuration&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/tg/configuration.py&lt;/filename&gt;&lt;line&gt;878&lt;/line&gt;&lt;function&gt;remover&lt;/function&gt;&lt;operation&gt;return app(environ, start_response)&lt;/operation&gt;&lt;operation_context&gt;        def remover(environ, start_response):
+            try:
+                return app(environ, start_response)
+            finally:
+                log.debug(&amp;quot;Removing DBSession from current thread&amp;quot;)
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;repoze.tm&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/repoze/tm/__init__.py&lt;/filename&gt;&lt;line&gt;24&lt;/line&gt;&lt;function&gt;__call__&lt;/function&gt;&lt;operation&gt;result = self.application(environ, save_status_and_headers)&lt;/operation&gt;&lt;operation_context&gt;
+        try:
+            result = self.application(environ, save_status_and_headers)
+        except:
+            self.abort()
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;repoze.who.middleware&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/repoze/who/middleware.py&lt;/filename&gt;&lt;line&gt;107&lt;/line&gt;&lt;function&gt;__call__&lt;/function&gt;&lt;operation&gt;app_iter = app(environ, wrapper.wrap_start_response)&lt;/operation&gt;&lt;operation_context&gt;
+        wrapper = StartResponseWrapper(start_response)
+        app_iter = app(environ, wrapper.wrap_start_response)
+
+        # The challenge decider almost(?) always needs information from the
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;tw.core.middleware&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/tw/core/middleware.py&lt;/filename&gt;&lt;line&gt;36&lt;/line&gt;&lt;function&gt;__call__&lt;/function&gt;&lt;operation&gt;return self.wsgi_app(environ, start_response)&lt;/operation&gt;&lt;operation_context&gt;
+    def __call__(self, environ, start_response):
+        return self.wsgi_app(environ, start_response)
+
+    def wsgi_app(self, environ, start_response):
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;tw.core.middleware&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/tw/core/middleware.py&lt;/filename&gt;&lt;line&gt;59&lt;/line&gt;&lt;function&gt;wsgi_app&lt;/function&gt;&lt;operation&gt;resp = req.get_response(self.application)&lt;/operation&gt;&lt;operation_context&gt;            else:
+                # Pass request downstream  
+                resp = req.get_response(self.application)
+            return resp(environ, start_response)
+        finally:
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;webob.request&lt;/module&gt;&lt;filename&gt;/usr/lib/python2.7/dist-packages/webob/request.py&lt;/filename&gt;&lt;line&gt;1320&lt;/line&gt;&lt;function&gt;send&lt;/function&gt;&lt;operation&gt;application, catch_exc_info=False)&lt;/operation&gt;&lt;operation_context&gt;        else:
+            status, headers, app_iter = self.call_application(
+                application, catch_exc_info=False)
+        return self.ResponseClass(
+            status=status, headerlist=list(headers), app_iter=app_iter)
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;webob.request&lt;/module&gt;&lt;filename&gt;/usr/lib/python2.7/dist-packages/webob/request.py&lt;/filename&gt;&lt;line&gt;1284&lt;/line&gt;&lt;function&gt;call_application&lt;/function&gt;&lt;operation&gt;app_iter = application(self.environ, start_response)&lt;/operation&gt;&lt;operation_context&gt;            captured[:] = [status, headers, exc_info]
+            return output.append
+        app_iter = application(self.environ, start_response)
+        if output or not captured:
+            try:
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;tw.core.resource_injector&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/tw/core/resource_injector.py&lt;/filename&gt;&lt;line&gt;67&lt;/line&gt;&lt;function&gt;_injector&lt;/function&gt;&lt;operation&gt;resp = req.get_response(app)&lt;/operation&gt;&lt;operation_context&gt;    def _injector(environ, start_response):
+        req = Request(environ)
+        resp = req.get_response(app)
+        content_type = resp.headers.get('Content-Type','text/plain').lower()
+        if 'html' in content_type:
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;webob.request&lt;/module&gt;&lt;filename&gt;/usr/lib/python2.7/dist-packages/webob/request.py&lt;/filename&gt;&lt;line&gt;1320&lt;/line&gt;&lt;function&gt;send&lt;/function&gt;&lt;operation&gt;application, catch_exc_info=False)&lt;/operation&gt;&lt;operation_context&gt;        else:
+            status, headers, app_iter = self.call_application(
+                application, catch_exc_info=False)
+        return self.ResponseClass(
+            status=status, headerlist=list(headers), app_iter=app_iter)
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;webob.request&lt;/module&gt;&lt;filename&gt;/usr/lib/python2.7/dist-packages/webob/request.py&lt;/filename&gt;&lt;line&gt;1284&lt;/line&gt;&lt;function&gt;call_application&lt;/function&gt;&lt;operation&gt;app_iter = application(self.environ, start_response)&lt;/operation&gt;&lt;operation_context&gt;            captured[:] = [status, headers, exc_info]
+            return output.append
+        app_iter = application(self.environ, start_response)
+        if output or not captured:
+            try:
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;beaker.middleware&lt;/module&gt;&lt;filename&gt;/usr/lib/python2.7/dist-packages/beaker/middleware.py&lt;/filename&gt;&lt;line&gt;73&lt;/line&gt;&lt;function&gt;__call__&lt;/function&gt;&lt;operation&gt;return self.app(environ, start_response)&lt;/operation&gt;&lt;operation_context&gt;                                                   self.cache_manager)
+        environ[self.environ_key] = self.cache_manager
+        return self.app(environ, start_response)
+
+
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;beaker.middleware&lt;/module&gt;&lt;filename&gt;/usr/lib/python2.7/dist-packages/beaker/middleware.py&lt;/filename&gt;&lt;line&gt;155&lt;/line&gt;&lt;function&gt;__call__&lt;/function&gt;&lt;operation&gt;return self.wrap_app(environ, session_start_response)&lt;/operation&gt;&lt;operation_context&gt;                        headers.append(('Set-cookie', cookie))
+            return start_response(status, headers, exc_info)
+        return self.wrap_app(environ, session_start_response)
+
+    def _get_session(self):
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;routes.middleware&lt;/module&gt;&lt;filename&gt;/usr/lib/python2.7/dist-packages/routes/middleware.py&lt;/filename&gt;&lt;line&gt;131&lt;/line&gt;&lt;function&gt;__call__&lt;/function&gt;&lt;operation&gt;response = self.app(environ, start_response)&lt;/operation&gt;&lt;operation_context&gt;                                             r'\1', oldpath)
+        
+        response = self.app(environ, start_response)
+        
+        # Wrapped in try as in rare cases the attribute will be gone already
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;pylons.wsgiapp&lt;/module&gt;&lt;filename&gt;/usr/lib/python2.7/dist-packages/pylons/wsgiapp.py&lt;/filename&gt;&lt;line&gt;102&lt;/line&gt;&lt;function&gt;__call__&lt;/function&gt;&lt;operation&gt;controller = self.resolve(environ, start_response)&lt;/operation&gt;&lt;operation_context&gt;                return ['%s' % paste.registry.restorer.get_request_id(environ)]
+
+        controller = self.resolve(environ, start_response)
+        response = self.dispatch(controller, environ, start_response)
+
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;pylons.wsgiapp&lt;/module&gt;&lt;filename&gt;/usr/lib/python2.7/dist-packages/pylons/wsgiapp.py&lt;/filename&gt;&lt;line&gt;231&lt;/line&gt;&lt;function&gt;resolve&lt;/function&gt;&lt;operation&gt;return self.find_controller(controller)&lt;/operation&gt;&lt;operation_context&gt;        if self.log_debug:
+            log.debug(&amp;quot;Resolved URL to controller: %r&amp;quot;, controller)
+        return self.find_controller(controller)
+
+    def find_controller(self, controller):
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;tg.wsgiapp&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/tg/wsgiapp.py&lt;/filename&gt;&lt;line&gt;41&lt;/line&gt;&lt;function&gt;find_controller&lt;/function&gt;&lt;operation&gt;__import__(full_module_name)&lt;/operation&gt;&lt;operation_context&gt;        __traceback_hide__ = 'before_and_this'
+
+        __import__(full_module_name)
+        module_name = controller.split('/')[-1]
+        class_name = class_name_from_module_name(module_name) + 'Controller'
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/home/zex/lab/Starter/script/json/BlueEgg/blueegg/controllers/root.py&lt;/filename&gt;&lt;line&gt;6&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from catwalk.tg2 import Catwalk&lt;/operation&gt;&lt;operation_context&gt;from tg import expose, flash, require, url, request, redirect
+from pylons.i18n import ugettext as _, lazy_ugettext as l_
+from catwalk.tg2 import Catwalk
+from repoze.what import predicates
+
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/catwalk/tg2/__init__.py&lt;/filename&gt;&lt;line&gt;1&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from controller import Catwalk&lt;/operation&gt;&lt;operation_context&gt;from controller import Catwalk
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/catwalk/tg2/controller.py&lt;/filename&gt;&lt;line&gt;13&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from tgext.admin import AdminController&lt;/operation&gt;&lt;operation_context&gt;Released under MIT license.
+&amp;quot;&amp;quot;&amp;quot;
+from tgext.admin import AdminController
+from tgext.admin.tgadminconfig import TGAdminConfig
+import warnings
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/tgext/admin/__init__.py&lt;/filename&gt;&lt;line&gt;1&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from controller import AdminController&lt;/operation&gt;&lt;operation_context&gt;from controller import AdminController
+from config import AdminConfig, CrudRestControllerConfig
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/tgext/admin/controller.py&lt;/filename&gt;&lt;line&gt;12&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from config import AdminConfig&lt;/operation&gt;&lt;operation_context&gt;
+from tgext.crud import CrudRestController
+from config import AdminConfig
+
+engine = 'genshi'
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/tgext/admin/config.py&lt;/filename&gt;&lt;line&gt;12&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from sprox.tablebase import TableBase&lt;/operation&gt;&lt;operation_context&gt;    from sprox.dojo.formbase import DojoAddRecordForm as AddRecordForm, DojoEditableForm as EditableForm
+except ImportError:
+    from sprox.tablebase import TableBase
+    from sprox.fillerbase import TableFiller
+    from sprox.formbase import AddRecordForm, EditableForm
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/sprox/tablebase.py&lt;/filename&gt;&lt;line&gt;2&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from viewbase import ViewBase&lt;/operation&gt;&lt;operation_context&gt;from sprox.widgets import SproxDataGrid
+from viewbase import ViewBase
+from metadata import FieldsMetadata
+from tw.api import Widget
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/sprox/viewbase.py&lt;/filename&gt;&lt;line&gt;4&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from configbase import ConfigBase, ConfigBaseError&lt;/operation&gt;&lt;operation_context&gt;from tw.api import Widget
+from tw.forms import HiddenField
+from configbase import ConfigBase, ConfigBaseError
+from sqlalchemy.orm import PropertyLoader
+from widgetselector import WidgetSelector
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/sprox/configbase.py&lt;/filename&gt;&lt;line&gt;3&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from sprox.providerselector import ProviderTypeSelector&lt;/operation&gt;&lt;operation_context&gt;from formencode.validators import Validator
+from tw.api import Widget
+from sprox.providerselector import ProviderTypeSelector
+
+class ConfigBaseError(Exception):pass
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/sprox/providerselector.py&lt;/filename&gt;&lt;line&gt;18&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from sqlalchemy.orm.attributes import ClassManager&lt;/operation&gt;&lt;operation_context&gt;from sqlalchemy.orm.session import Session
+from sqlalchemy.orm.scoping import ScopedSession
+from sqlalchemy.orm.attributes import ClassManager
+
+from sprox.saormprovider import SAORMProvider
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;/stack&gt;&lt;exception&gt;&lt;type&gt;ImportError&lt;/type&gt;&lt;value&gt;cannot import name ClassManager&lt;/value&gt;&lt;/exception&gt;&lt;/traceback&gt;</textarea>
+    </div>
+    <div id="short_xml_version" class="hidden-data">
+    <textarea style="width: 100%" rows=44 cols=60>&lt;?xml version="1.0" ?&gt;&lt;traceback&gt;&lt;sysinfo&gt;&lt;language full_version="2.7.6 (default, Mar 22 2014, 22:59:56) 
+[GCC 4.8.2]" platform="linux2" version="2.7.6"&gt;Python&lt;/language&gt;&lt;libraries&gt;&lt;library name="repoze.lru" version="0.6"/&gt;&lt;library name="pastedeploy" version="1.5.2"/&gt;&lt;library name="tg.devtools" version="2.0.2"/&gt;&lt;library name="weberror" version="0.10.3"/&gt;&lt;library name="zope.interface" version="4.0.5"/&gt;&lt;library name="tempita" version="0.5.2"/&gt;&lt;library name="pygments" version="1.6"/&gt;&lt;library name="genshi" version="0.7"/&gt;&lt;library name="repoze.who.plugins.sa" version="1.0rc2"/&gt;&lt;library name="repoze.who" version="1.0.18"/&gt;&lt;library name="turbogears2" version="2.1.5"/&gt;&lt;library name="mako" version="0.9.1"/&gt;&lt;library name="formencode" version="1.2.6"/&gt;&lt;library name="babel" version="1.3"/&gt;&lt;library name="six" version="1.5.2"/&gt;&lt;library name="webtest" version="2.0.14"/&gt;&lt;library name="webob" version="1.3.1"/&gt;&lt;library name="repoze.what.plugins.sql" version="1.0rc1"/&gt;&lt;library name="sqlalchemy" version="0.8.4"/&gt;&lt;library name="pylons" version="1.0.1"/&gt;&lt;library name="simplejson" version="3.3.1"/&gt;&lt;library name="repoze.who-testutil" version="1.0rc1"/&gt;&lt;library name="markupsafe" version="0.18"/&gt;&lt;library name="sqlalchemy-migrate" version="0.8.2"/&gt;&lt;library name="beautifulsoup4" version="4.2.1"/&gt;&lt;library name="paste" version="1.7.5.1"/&gt;&lt;library name="decorator" version="3.4.0"/&gt;&lt;library name="beaker" version="1.6.3"/&gt;&lt;library name="repoze.what" version="1.0.9"/&gt;&lt;library name="repoze.what-quickstart" version="1.0"/&gt;&lt;library name="pbr" version="0.7.0"/&gt;&lt;library name="webhelpers" version="1.3"/&gt;&lt;library name="pytz" version="2012c"/&gt;&lt;library name="webflash" version="0.1a9"/&gt;&lt;library name="nose" version="1.3.1"/&gt;&lt;library name="routes" version="2.0"/&gt;&lt;library name="repoze.who-friendlyform" version="1.0b3"/&gt;&lt;library name="waitress" version="0.8.8"/&gt;&lt;library name="pastescript" version="1.7.5"/&gt;&lt;/libraries&gt;&lt;/sysinfo&gt;&lt;stack&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/home/zex/lab/Starter/script/json/BlueEgg/blueegg/controllers/root.py&lt;/filename&gt;&lt;line&gt;6&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from catwalk.tg2 import Catwalk&lt;/operation&gt;&lt;operation_context&gt;from tg import expose, flash, require, url, request, redirect
+from pylons.i18n import ugettext as _, lazy_ugettext as l_
+from catwalk.tg2 import Catwalk
+from repoze.what import predicates
+
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/catwalk/tg2/__init__.py&lt;/filename&gt;&lt;line&gt;1&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from controller import Catwalk&lt;/operation&gt;&lt;operation_context&gt;from controller import Catwalk
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/catwalk/tg2/controller.py&lt;/filename&gt;&lt;line&gt;13&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from tgext.admin import AdminController&lt;/operation&gt;&lt;operation_context&gt;Released under MIT license.
+&amp;quot;&amp;quot;&amp;quot;
+from tgext.admin import AdminController
+from tgext.admin.tgadminconfig import TGAdminConfig
+import warnings
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/tgext/admin/__init__.py&lt;/filename&gt;&lt;line&gt;1&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from controller import AdminController&lt;/operation&gt;&lt;operation_context&gt;from controller import AdminController
+from config import AdminConfig, CrudRestControllerConfig
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/tgext/admin/controller.py&lt;/filename&gt;&lt;line&gt;12&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from config import AdminConfig&lt;/operation&gt;&lt;operation_context&gt;
+from tgext.crud import CrudRestController
+from config import AdminConfig
+
+engine = 'genshi'
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/tgext/admin/config.py&lt;/filename&gt;&lt;line&gt;12&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from sprox.tablebase import TableBase&lt;/operation&gt;&lt;operation_context&gt;    from sprox.dojo.formbase import DojoAddRecordForm as AddRecordForm, DojoEditableForm as EditableForm
+except ImportError:
+    from sprox.tablebase import TableBase
+    from sprox.fillerbase import TableFiller
+    from sprox.formbase import AddRecordForm, EditableForm
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/sprox/tablebase.py&lt;/filename&gt;&lt;line&gt;2&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from viewbase import ViewBase&lt;/operation&gt;&lt;operation_context&gt;from sprox.widgets import SproxDataGrid
+from viewbase import ViewBase
+from metadata import FieldsMetadata
+from tw.api import Widget
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/sprox/viewbase.py&lt;/filename&gt;&lt;line&gt;4&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from configbase import ConfigBase, ConfigBaseError&lt;/operation&gt;&lt;operation_context&gt;from tw.api import Widget
+from tw.forms import HiddenField
+from configbase import ConfigBase, ConfigBaseError
+from sqlalchemy.orm import PropertyLoader
+from widgetselector import WidgetSelector
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/sprox/configbase.py&lt;/filename&gt;&lt;line&gt;3&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from sprox.providerselector import ProviderTypeSelector&lt;/operation&gt;&lt;operation_context&gt;from formencode.validators import Validator
+from tw.api import Widget
+from sprox.providerselector import ProviderTypeSelector
+
+class ConfigBaseError(Exception):pass
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;frame&gt;&lt;module&gt;?&lt;/module&gt;&lt;filename&gt;/usr/lib/pymodules/python2.7/sprox/providerselector.py&lt;/filename&gt;&lt;line&gt;18&lt;/line&gt;&lt;function&gt;&amp;lt;module&amp;gt;&lt;/function&gt;&lt;operation&gt;from sqlalchemy.orm.attributes import ClassManager&lt;/operation&gt;&lt;operation_context&gt;from sqlalchemy.orm.session import Session
+from sqlalchemy.orm.scoping import ScopedSession
+from sqlalchemy.orm.attributes import ClassManager
+
+from sprox.saormprovider import SAORMProvider
+&lt;/operation_context&gt;&lt;/frame&gt;&lt;/stack&gt;&lt;exception&gt;&lt;type&gt;ImportError&lt;/type&gt;&lt;value&gt;cannot import name ClassManager&lt;/value&gt;&lt;/exception&gt;&lt;/traceback&gt;</textarea>
+    </div>
+    
+        <div id="full_traceback" class="hidden-data">
+        URL: <a href="http://127.0.0.1/">http://127.0.0.1/</a><br>
+<div class="frame">
+Module <span class="module" title="/usr/lib/python2.7/dist-packages/weberror/evalexception.py">weberror.evalexception</span>:<b>431</b> in <code>respond</code>  <a href="#" class="show_locals" tbid="139981709700848" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="weberror.evalexception:431" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">try</span><span class="p">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">__traceback_supplement__</span> <span class="o">=</span> <span class="n">errormiddleware</span><span class="o">.</span><span class="n">Supplement</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">environ</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">app_iter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">application</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">detect_start_response</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="c"># Don&#39;t create a list from a paste.fileapp object </span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="n">app_iter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">application</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">detect_start_response</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/tg/configuration.py">tg.configuration</span>:<b>878</b> in <code>remover</code>  <a href="#" class="show_locals" tbid="139981709700776" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="tg.configuration:878" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">def</span> <span class="nf">remover</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">):</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">try</span><span class="p">:</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="n">app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">finally</span><span class="p">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;Removing DBSession from current thread&quot;</span><span class="p">)</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="k">return</span> <span class="n">app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/repoze/tm/__init__.py">repoze.tm</span>:<b>24</b> in <code>__call__</code>  <a href="#" class="show_locals" tbid="139981709700632" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="repoze.tm:24" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">try</span><span class="p">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">application</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">save_status_and_headers</span><span class="p">)</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">except</span><span class="p">:</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="bp">self</span><span class="o">.</span><span class="n">abort</span><span class="p">()</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">application</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">save_status_and_headers</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/repoze/who/middleware.py">repoze.who.middleware</span>:<b>107</b> in <code>__call__</code>  <a href="#" class="show_locals" tbid="139981709700560" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="repoze.who.middleware:107" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">wrapper</span> <span class="o">=</span> <span class="n">StartResponseWrapper</span><span class="p">(</span><span class="n">start_response</span><span class="p">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">app_iter</span> <span class="o">=</span> <span class="n">app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">wrap_start_response</span><span class="p">)</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="c"># The challenge decider almost(?) always needs information from the</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="n">app_iter</span> <span class="o">=</span> <span class="n">app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">wrap_start_response</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/tw/core/middleware.py">tw.core.middleware</span>:<b>36</b> in <code>__call__</code>  <a href="#" class="show_locals" tbid="139981709700488" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="tw.core.middleware:36" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp; <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">):</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wsgi_app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">def</span> <span class="nf">wsgi_app</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">):</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wsgi_app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/tw/core/middleware.py">tw.core.middleware</span>:<b>59</b> in <code>wsgi_app</code>  <a href="#" class="show_locals" tbid="139981709700416" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="tw.core.middleware:59" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">else</span><span class="p">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="c"># Pass request downstream&nbsp; </span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">resp</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">application</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="n">resp</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">finally</span><span class="p">:</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="n">resp</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">application</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/python2.7/dist-packages/webob/request.py">webob.request</span>:<b>1320</b> in <code>send</code>  <a href="#" class="show_locals" tbid="139981709700344" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="webob.request:1320" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">else</span><span class="p">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">status</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">app_iter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">call_application</span><span class="p">(</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">application</span><span class="p">,</span> <span class="n">catch_exc_info</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ResponseClass</span><span class="p">(</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="p">,</span> <span class="n">headerlist</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span> <span class="n">app_iter</span><span class="o">=</span><span class="n">app_iter</span><span class="p">)</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="n">application</span><span class="p">,</span> <span class="n">catch_exc_info</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/python2.7/dist-packages/webob/request.py">webob.request</span>:<b>1284</b> in <code>call_application</code>  <a href="#" class="show_locals" tbid="139981709700272" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="webob.request:1284" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">captured</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">status</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">exc_info</span><span class="p">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="n">output</span><span class="o">.</span><span class="n">append</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">app_iter</span> <span class="o">=</span> <span class="n">application</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">if</span> <span class="n">output</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">captured</span><span class="p">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">try</span><span class="p">:</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="n">app_iter</span> <span class="o">=</span> <span class="n">application</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/tw/core/resource_injector.py">tw.core.resource_injector</span>:<b>67</b> in <code>_injector</code>  <a href="#" class="show_locals" tbid="139981709700200" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="tw.core.resource_injector:67" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp; <span class="k">def</span> <span class="nf">_injector</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">):</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">req</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="n">environ</span><span class="p">)</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">resp</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">app</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">content_type</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">,</span><span class="s">&#39;text/plain&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">if</span> <span class="s">&#39;html&#39;</span> <span class="ow">in</span> <span class="n">content_type</span><span class="p">:</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="n">resp</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">app</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/python2.7/dist-packages/webob/request.py">webob.request</span>:<b>1320</b> in <code>send</code>  <a href="#" class="show_locals" tbid="139981709700128" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="webob.request:1320" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">else</span><span class="p">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">status</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">app_iter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">call_application</span><span class="p">(</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">application</span><span class="p">,</span> <span class="n">catch_exc_info</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ResponseClass</span><span class="p">(</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="p">,</span> <span class="n">headerlist</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span> <span class="n">app_iter</span><span class="o">=</span><span class="n">app_iter</span><span class="p">)</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="n">application</span><span class="p">,</span> <span class="n">catch_exc_info</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/python2.7/dist-packages/webob/request.py">webob.request</span>:<b>1284</b> in <code>call_application</code>  <a href="#" class="show_locals" tbid="139981709700056" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="webob.request:1284" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">captured</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">status</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">exc_info</span><span class="p">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="n">output</span><span class="o">.</span><span class="n">append</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">app_iter</span> <span class="o">=</span> <span class="n">application</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">if</span> <span class="n">output</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">captured</span><span class="p">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">try</span><span class="p">:</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="n">app_iter</span> <span class="o">=</span> <span class="n">application</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/python2.7/dist-packages/beaker/middleware.py">beaker.middleware</span>:<b>73</b> in <code>__call__</code>  <a href="#" class="show_locals" tbid="139981709699984" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="beaker.middleware:73" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="bp">self</span><span class="o">.</span><span class="n">cache_manager</span><span class="p">)</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">environ</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">environ_key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache_manager</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/python2.7/dist-packages/beaker/middleware.py">beaker.middleware</span>:<b>155</b> in <code>__call__</code>  <a href="#" class="show_locals" tbid="139981709699912" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="beaker.middleware:155" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">headers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s">&#39;Set-cookie&#39;</span><span class="p">,</span> <span class="n">cookie</span><span class="p">))</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="n">start_response</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">exc_info</span><span class="p">)</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrap_app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">session_start_response</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">def</span> <span class="nf">_get_session</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrap_app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">session_start_response</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/python2.7/dist-packages/routes/middleware.py">routes.middleware</span>:<b>131</b> in <code>__call__</code>  <a href="#" class="show_locals" tbid="139981709699840" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="routes.middleware:131" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="s">r&#39;\1&#39;</span><span class="p">,</span> <span class="n">oldpath</span><span class="p">)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="c"># Wrapped in try as in rare cases the attribute will be gone already</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/python2.7/dist-packages/pylons/wsgiapp.py">pylons.wsgiapp</span>:<b>102</b> in <code>__call__</code>  <a href="#" class="show_locals" tbid="139981709699768" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="pylons.wsgiapp:102" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="p">[</span><span class="s">&#39;</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">paste</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">restorer</span><span class="o">.</span><span class="n">get_request_id</span><span class="p">(</span><span class="n">environ</span><span class="p">)]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">controller</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span> <span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="n">controller</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/python2.7/dist-packages/pylons/wsgiapp.py">pylons.wsgiapp</span>:<b>231</b> in <code>resolve</code>  <a href="#" class="show_locals" tbid="139981709699696" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="pylons.wsgiapp:231" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_debug</span><span class="p">:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;Resolved URL to controller: </span><span class="si">%r</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">controller</span><span class="p">)</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_controller</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">def</span> <span class="nf">find_controller</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">controller</span><span class="p">):</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_controller</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/tg/wsgiapp.py">tg.wsgiapp</span>:<b>41</b> in <code>find_controller</code>  <a href="#" class="show_locals" tbid="139981709699624" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="tg.wsgiapp:41" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">__traceback_hide__</span> <span class="o">=</span> <span class="s">&#39;before_and_this&#39;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="nb">__import__</span><span class="p">(</span><span class="n">full_module_name</span><span class="p">)</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">module_name</span> <span class="o">=</span> <span class="n">controller</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">class_name</span> <span class="o">=</span> <span class="n">class_name_from_module_name</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;Controller&#39;</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="nb">__import__</span><span class="p">(</span><span class="n">full_module_name</span><span class="p">)</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/home/zex/lab/Starter/script/json/BlueEgg/blueegg/controllers/root.py">?</span>:<b>6</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699552" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:6" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">tg</span> <span class="kn">import</span> <span class="n">expose</span><span class="p">,</span> <span class="n">flash</span><span class="p">,</span> <span class="n">require</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">redirect</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">pylons.i18n</span> <span class="kn">import</span> <span class="n">ugettext</span> <span class="k">as</span> <span class="n">_</span><span class="p">,</span> <span class="n">lazy_ugettext</span> <span class="k">as</span> <span class="n">l_</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">catwalk.tg2</span> <span class="kn">import</span> <span class="n">Catwalk</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">repoze.what</span> <span class="kn">import</span> <span class="n">predicates</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">catwalk.tg2</span> <span class="kn">import</span> <span class="n">Catwalk</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/catwalk/tg2/__init__.py">?</span>:<b>1</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699480" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:1" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">controller</span> <span class="kn">import</span> <span class="n">Catwalk</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">controller</span> <span class="kn">import</span> <span class="n">Catwalk</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/catwalk/tg2/controller.py">?</span>:<b>13</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699408" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:13" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="n">Released</span> <span class="n">under</span> <span class="n">MIT</span> <span class="n">license</span><span class="o">.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="s">&quot;&quot;&quot;</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="s">from tgext.admin import AdminController</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="s">from tgext.admin.tgadminconfig import TGAdminConfig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="s">import warnings</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">tgext.admin</span> <span class="kn">import</span> <span class="n">AdminController</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/tgext/admin/__init__.py">?</span>:<b>1</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709642208" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:1" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">controller</span> <span class="kn">import</span> <span class="n">AdminController</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">AdminConfig</span><span class="p">,</span> <span class="n">CrudRestControllerConfig</span></span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">controller</span> <span class="kn">import</span> <span class="n">AdminController</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/tgext/admin/controller.py">?</span>:<b>12</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709642280" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:12" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">tgext.crud</span> <span class="kn">import</span> <span class="n">CrudRestController</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">AdminConfig</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="n">engine</span> <span class="o">=</span> <span class="s">&#39;genshi&#39;</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">AdminConfig</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/tgext/admin/config.py">?</span>:<b>12</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699336" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:12" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a>&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.dojo.formbase</span> <span class="kn">import</span> <span class="n">DojoAddRecordForm</span> <span class="k">as</span> <span class="n">AddRecordForm</span><span class="p">,</span> <span class="n">DojoEditableForm</span> <span class="k">as</span> <span class="n">EditableForm</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.tablebase</span> <span class="kn">import</span> <span class="n">TableBase</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.fillerbase</span> <span class="kn">import</span> <span class="n">TableFiller</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">AddRecordForm</span><span class="p">,</span> <span class="n">EditableForm</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">sprox.tablebase</span> <span class="kn">import</span> <span class="n">TableBase</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/sprox/tablebase.py">?</span>:<b>2</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699264" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:2" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">sprox.widgets</span> <span class="kn">import</span> <span class="n">SproxDataGrid</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">viewbase</span> <span class="kn">import</span> <span class="n">ViewBase</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">metadata</span> <span class="kn">import</span> <span class="n">FieldsMetadata</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">tw.api</span> <span class="kn">import</span> <span class="n">Widget</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">viewbase</span> <span class="kn">import</span> <span class="n">ViewBase</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/sprox/viewbase.py">?</span>:<b>4</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699192" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:4" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">tw.api</span> <span class="kn">import</span> <span class="n">Widget</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">tw.forms</span> <span class="kn">import</span> <span class="n">HiddenField</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">configbase</span> <span class="kn">import</span> <span class="n">ConfigBase</span><span class="p">,</span> <span class="n">ConfigBaseError</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">PropertyLoader</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">widgetselector</span> <span class="kn">import</span> <span class="n">WidgetSelector</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">configbase</span> <span class="kn">import</span> <span class="n">ConfigBase</span><span class="p">,</span> <span class="n">ConfigBaseError</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/sprox/configbase.py">?</span>:<b>3</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699120" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:3" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">Validator</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">tw.api</span> <span class="kn">import</span> <span class="n">Widget</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.providerselector</span> <span class="kn">import</span> <span class="n">ProviderTypeSelector</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="k">class</span> <span class="nc">ConfigBaseError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span><span class="k">pass</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">sprox.providerselector</span> <span class="kn">import</span> <span class="n">ProviderTypeSelector</span></div>
+</div>
+<div class="frame">
+Module <span class="module" title="/usr/lib/pymodules/python2.7/sprox/providerselector.py">?</span>:<b>18</b> in <code>&lt;module&gt;</code>  <a href="#" class="show_locals" tbid="139981709699048" onClick="return showFrame(this)">&nbsp; &nbsp; <img src="http://127.0.0.1/_debug/media/plus.jpg" border=0 width=9 height=9> &nbsp; &nbsp;</a> <a href="#" class="" location="None:18" onClick="return showSource(this)">view</a><br>
+<div style="display: none" class="source highlight" source-type="long"><a class="switch_source" onclick="return switch_source(this, 'long')" href="#">&lt;&lt;&nbsp; </a><span class="kn">from</span> <span class="nn">sqlalchemy.orm.session</span> <span class="kn">import</span> <span class="n">Session</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sqlalchemy.orm.scoping</span> <span class="kn">import</span> <span class="n">ScopedSession</span><br>
+<span class="source-highlight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sqlalchemy.orm.attributes</span> <span class="kn">import</span> <span class="n">ClassManager</span></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="kn">from</span> <span class="nn">sprox.saormprovider</span> <span class="kn">import</span> <span class="n">SAORMProvider</span></div><div class="source highlight" source-type="short"><a onclick="return switch_source(this, 'short')" class="switch_source" href="#">&gt;&gt;&nbsp; </a><span class="kn">from</span> <span class="nn">sqlalchemy.orm.attributes</span> <span class="kn">import</span> <span class="n">ClassManager</span></div>
+</div>
+<b>ImportError: cannot import name ClassManager</b><br>
+        </div>
+        <div id="long_text_version" class="hidden-data">
+        <textarea style="width: 100%" rows=56 cols=60>URL: http://127.0.0.1/
+File '/usr/lib/python2.7/dist-packages/weberror/evalexception.py', line 431 in respond
+  app_iter = self.application(environ, detect_start_response)
+File '/usr/lib/pymodules/python2.7/tg/configuration.py', line 878 in remover
+  return app(environ, start_response)
+File '/usr/lib/pymodules/python2.7/repoze/tm/__init__.py', line 24 in __call__
+  result = self.application(environ, save_status_and_headers)
+File '/usr/lib/pymodules/python2.7/repoze/who/middleware.py', line 107 in __call__
+  app_iter = app(environ, wrapper.wrap_start_response)
+File '/usr/lib/pymodules/python2.7/tw/core/middleware.py', line 36 in __call__
+  return self.wsgi_app(environ, start_response)
+File '/usr/lib/pymodules/python2.7/tw/core/middleware.py', line 59 in wsgi_app
+  resp = req.get_response(self.application)
+File '/usr/lib/python2.7/dist-packages/webob/request.py', line 1320 in send
+  application, catch_exc_info=False)
+File '/usr/lib/python2.7/dist-packages/webob/request.py', line 1284 in call_application
+  app_iter = application(self.environ, start_response)
+File '/usr/lib/pymodules/python2.7/tw/core/resource_injector.py', line 67 in _injector
+  resp = req.get_response(app)
+File '/usr/lib/python2.7/dist-packages/webob/request.py', line 1320 in send
+  application, catch_exc_info=False)
+File '/usr/lib/python2.7/dist-packages/webob/request.py', line 1284 in call_application
+  app_iter = application(self.environ, start_response)
+File '/usr/lib/python2.7/dist-packages/beaker/middleware.py', line 73 in __call__
+  return self.app(environ, start_response)
+File '/usr/lib/python2.7/dist-packages/beaker/middleware.py', line 155 in __call__
+  return self.wrap_app(environ, session_start_response)
+File '/usr/lib/python2.7/dist-packages/routes/middleware.py', line 131 in __call__
+  response = self.app(environ, start_response)
+File '/usr/lib/python2.7/dist-packages/pylons/wsgiapp.py', line 102 in __call__
+  controller = self.resolve(environ, start_response)
+File '/usr/lib/python2.7/dist-packages/pylons/wsgiapp.py', line 231 in resolve
+  return self.find_controller(controller)
+File '/usr/lib/pymodules/python2.7/tg/wsgiapp.py', line 41 in find_controller
+  __import__(full_module_name)
+File '/home/zex/lab/Starter/script/json/BlueEgg/blueegg/controllers/root.py', line 6 in &lt;module&gt;
+  from catwalk.tg2 import Catwalk
+File '/usr/lib/pymodules/python2.7/catwalk/tg2/__init__.py', line 1 in &lt;module&gt;
+  from controller import Catwalk
+File '/usr/lib/pymodules/python2.7/catwalk/tg2/controller.py', line 13 in &lt;module&gt;
+  from tgext.admin import AdminController
+File '/usr/lib/pymodules/python2.7/tgext/admin/__init__.py', line 1 in &lt;module&gt;
+  from controller import AdminController
+File '/usr/lib/pymodules/python2.7/tgext/admin/controller.py', line 12 in &lt;module&gt;
+  from config import AdminConfig
+File '/usr/lib/pymodules/python2.7/tgext/admin/config.py', line 12 in &lt;module&gt;
+  from sprox.tablebase import TableBase
+File '/usr/lib/pymodules/python2.7/sprox/tablebase.py', line 2 in &lt;module&gt;
+  from viewbase import ViewBase
+File '/usr/lib/pymodules/python2.7/sprox/viewbase.py', line 4 in &lt;module&gt;
+  from configbase import ConfigBase, ConfigBaseError
+File '/usr/lib/pymodules/python2.7/sprox/configbase.py', line 3 in &lt;module&gt;
+  from sprox.providerselector import ProviderTypeSelector
+File '/usr/lib/pymodules/python2.7/sprox/providerselector.py', line 18 in &lt;module&gt;
+  from sqlalchemy.orm.attributes import ClassManager
+ImportError: cannot import name ClassManager</textarea>
+        </div>
+        
+    
+<div class="feature-highlight">
+<b>Extra Features</b>
+<table border="0">
+<tr><td><a href="#" onclick="return false" class="switch_source" style="cursor: default">&gt;&gt;</a></td><td>Display the lines of code near each part of the traceback</td></tr>
+<tr><td><img src="http://127.0.0.1/_debug/media/plus.jpg" /></td><td>Show a debug prompt to allow you to directly debug the code at the traceback</td></tr>
+</table>
+</div><button onclick="window.location.href='http://127.0.0.1/'">Re-GET Page</button><br>
+
+            </div>
+        </div>
+        <br class="clear" />
+        <div class="hr"><hr class="clear" /></div>
+    </div>
+    <!-- Footer -->
+    <script type="text/javascript" src="http://127.0.0.1/_debug/media/jquery-1.2.3.pack.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1/_debug/media/debug.js"></script>
+    <div id="footer"><script src="http://127.0.0.1/_debug/media/pylons/javascripts/traceback.js"></script>
+<script>
+var TRACEBACK = {
+    uri: "http://127.0.0.1/_debug",
+    host: "pylonshq.com",
+    traceback: "/tracebacks"
+}
+</script>
+<div id="service_widget">
+<h2 class="assistance">TurboGears Online Assistance</h2>
+<div id="nv">
+<ul id="supportnav">
+    <li class="nav active"><a class="overview" href="#">Overview</a></li>
+    <li class="nav"><a class="search" href="#">Search Mail Lists</a></li>
+    <li class="nav"><a class="posttraceback" href="#">Post Traceback</a></li>
+</ul>
+</div>
+<div class="clearfix">&nbsp;</div>
+<div class="overviewtab">
+<h3>Looking for help?</h3>
+
+<p>Here are a few tips for troubleshooting if the above traceback isn't
+helping out.</p>
+
+<ol>
+<li>Search the mail list</li>
+<li>Post the traceback, and ask for help on IRC</li>
+<li>Post a message to the mail list, referring to the posted traceback</li>
+
+</div>
+<div class="posttracebacktab">
+<p><b>Note:</b> Clicking this button will post your traceback to the PylonsHQ website.
+The traceback includes the module names, Python version, and lines of code that you
+can see above. All tracebacks are posted anonymously unless you're logged into the
+PylonsHQ website in this browser.</p>
+<input type="button" href="#" class="submit_traceback" value="Send TraceBack to PylonsHQ" style="text-align: center;"/>
+</div>
+
+<div class="searchtab">
+<p>The following mail lists will be searched:<br />
+<input type="checkbox" name="lists" value="python" /> Python<br />
+<input type="checkbox" name="lists" value="pylons" checked="checked" /> Pylons<br />
+<input type="checkbox" name="lists" value="turbogears" checked="checked" /> TurboGears<br />
+<input type="checkbox" name="lists" value="sqlalchemy" /> SQLAlchemy<br />
+<input type="checkbox" name="lists" value="genshi" /> Genshi<br />
+<input type="checkbox" name="lists" value="toscawidgets" /> ToscaWidgets<br />
+<input type="checkbox" name="lists" value="mako" /> Mako<br />
+<input type="checkbox" name="lists" value="sqlalchemy" /> SQLAlchemy</p>
+<p class="query">for: <input type="text" name="query" class="query" /></p>
+
+<p><input type="submit" value="Search" /></p>
+<div class="searchresults">
+
+</div>
+</div>
+
+</div>
+<div id="pylons_logo"><img src="http://127.0.0.1/_debug/media/pylons/img/pylons-tower120.png" /></div>
+<div class="credits">Pylons version 1.0.1</div></div>
+</body>
+</html>
+
