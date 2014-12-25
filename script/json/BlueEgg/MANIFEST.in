@@ -1,0 +1,4 @@
+recursive-include blueegg/public *
+include blueegg/public/favicon.ico
+recursive-include blueegg/i18n *
+recursive-include blueegg/templates *
